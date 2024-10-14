@@ -313,4 +313,24 @@ span{
 .timeline-item:last-child{
     margin-bottom: 0;
 }
-.timeline-item:nth-child()
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% +30%);
+    text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30%);
+}
+
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+    0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
