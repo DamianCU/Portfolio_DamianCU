@@ -9,7 +9,14 @@
 </head>
 <body>
     <header>
+        <div id="language-selector">
+            <button onclick="setLanguage('es')"><img src="./images/langEspañol.JPG" alt="Español"></button>
+            <button onclick="setLanguage('en')"><img src="./images/langEnglish.JPG" alt="English"></button>
+        </div>
+
         <a href="#name" class="logo">Damián<span>Carrillo</span></a>
+        
+        <!-- Selector de idioma -->
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -27,11 +34,18 @@
                 <img src="./images/dmcu2.JPG" alt="main photo">
             </div>
             <div class="home-text">
-                <h1>Hi, It's <span>Damián</span></h1>
-                <h3 class="text-animation">I'm a</h3>
-                <p>
-                    Damián Carrillo, born on March 11, 1990, is a Spanish footballer who plays for the Real Madrid CF. He is currently 28 years old and plays as a forward. He has played for various clubs, including Real Madrid, Barcelona, Valencia, and Atletico Madrid.
-                </p>
+                <!-- Texto en español -->
+                <div class="lang es">
+                    <h1>Hola, soy <span>Damián</span></h1>
+                    <h3 class="text-animation">Soy un</h3>
+                    <p>Desarrollador principalmente frontend ['Perfeccionando Backend'] apasionado por el desarrollo de webs, videojuegos y todo tipo de apps</p>
+                </div>
+                <!-- Texto en inglés -->
+                <div class="lang en" style="display:none;">
+                    <h1>Hi, It's <span>Damián</span></h1>
+                    <h3 class="text-animation">I'm a</h3>
+                    <p>Frontend developer ['Improving Backend'] passionate about web development, video games, and all kinds of apps</p>
+                </div>
 
                 <div class="social-icons">
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
@@ -39,8 +53,11 @@
                 </div>
     
                 <div class="btn-group">
-                    <a href="#" class="btn">Hire</a>
-                    <a href="#contact" class="btn">Contact</a>
+                    <a href="#" class="btn lang es">Contrátame</a>
+                    <a href="#contact" class="btn lang es">Contacto</a>
+
+                    <a href="#" class="btn lang en" style="display:none;">Hire Me</a>
+                    <a href="#contact" class="btn lang en" style="display:none;">Contact</a>
                 </div>
 
             </div>
@@ -48,112 +65,115 @@
     </section>
 
     <section class="education" id="education">
-        <h2 class="heading">Education</h2>
+        <h2 class="heading lang es">Educación</h2>
+        <h2 class="heading lang en" style="display:none;">Education</h2>
 
         <div class="timeline-items">
-
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>HackaBoss Bootcamp</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempora, debitis vitae reiciendis mollitia inventore minima culpa voluptates impedit earum harum accusamus quos vero! Ipsa mollitia enim totam ipsam consectetur.</p>
-                    </div>                
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>HackaBoss Bootcamp</h3>
+                    <p class="lang es">Programa intensivo de desarrollo web con enfoque en Frontend y Backend.</p>
+                    <p class="lang en" style="display:none;">Intensive web development program focused on Frontend and Backend.</p>
+                </div>                
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>Programación Web I.O.C.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempora, debitis vitae reiciendis mollitia inventore minima culpa voluptates impedit earum harum accusamus quos vero! Ipsa mollitia enim totam ipsam consectetur.</p>
-                    </div>
-                
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Programación Web I.O.C.</h3>
+                    <p class="lang es">Curso de programación web avanzada, centrado en la creación de aplicaciones modernas.</p>
+                    <p class="lang en" style="display:none;">Advanced web programming course, focused on creating modern applications.</p>
+                </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                    <div class="timeline-date">2016-2020</div>
-                    <div class="timeline-content">
-                        <h3>University of Granada 2016-2020</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempora, debitis vitae reiciendis mollitia inventore minima culpa voluptates impedit earum harum accusamus quos vero! Ipsa mollitia enim totam ipsam consectetur.</p>
-                    </div>
-                
+                <div class="timeline-date">2016-2020</div>
+                <div class="timeline-content">
+                    <h3>University of Granada</h3>
+                    <p class="lang es">Graduado en Ingeniería Informática.</p>
+                    <p class="lang en" style="display:none;">Graduated in Computer Engineering.</p>
+                </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021</div>
-                    <div class="timeline-content">
-                        <h3>E.E.P.P. Sagrada Familia</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempora, debitis vitae reiciendis mollitia inventore minima culpa voluptates impedit earum harum accusamus quos vero! Ipsa mollitia enim totam ipsam consectetur.</p>
-                    </div>
-                
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h3>E.E.P.P. Sagrada Familia</h3>
+                    <p class="lang es">Formación profesional en desarrollo de aplicaciones web.</p>
+                    <p class="lang en" style="display:none;">Professional training in web application development.</p>
+                </div>
             </div>
-
         </div>
     </section>
 
     <section class="services" id="services">    
-        <h2 class="heading">Services</h2>
+        <h2 class="heading lang es">Servicios</h2>
+        <h2 class="heading lang en" style="display:none;">Services</h2>
 
         <div class="services container">
             <div class="service-box">
                 <div class="service-info">  
                     <h4>UI Design</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptas molestias placeat sunt eum deserunt fugit dolores! Provident laboriosam corporis totam, eaque dolorem obcaecati, sint, voluptatibus blanditiis quis doloremque quod.</p>
+                    <p class="lang es">Diseño de interfaces de usuario con un enfoque en la experiencia y usabilidad.</p>
+                    <p class="lang en" style="display:none;">User interface design with a focus on experience and usability.</p>
                 </div>
             </div>
 
             <div class="service-box">
                 <div class="service-info">  
                     <h4>Frontend Development</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptas molestias placeat sunt eum deserunt fugit dolores! Provident laboriosam corporis totam, eaque dolorem obcaecati, sint, voluptatibus blanditiis quis doloremque quod.</p>
+                    <p class="lang es">Desarrollo de interfaces web interactivas y responsivas utilizando las últimas tecnologías.</p>
+                    <p class="lang en" style="display:none;">Development of interactive and responsive web interfaces using the latest technologies.</p>
                 </div>
             </div>
 
             <div class="service-box">
                 <div class="service-info">  
                     <h4>Backend Development</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptas molestias placeat sunt eum deserunt fugit dolores! Provident laboriosam corporis totam, eaque dolorem obcaecati, sint, voluptatibus blanditiis quis doloremque quod.</p>
+                    <p class="lang es">Creación de servidores eficientes y escalables para aplicaciones web.</p>
+                    <p class="lang en" style="display:none;">Building efficient and scalable servers for web applications.</p>
                 </div>
             </div>
 
             <div class="service-box">
                 <div class="service-info">  
                     <h4>3D Artist Blender</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptas molestias placeat sunt eum deserunt fugit dolores! Provident laboriosam corporis totam, eaque dolorem obcaecati, sint, voluptatibus blanditiis quis doloremque quod.</p>
+                    <p class="lang es">Modelado y animación 3D utilizando Blender.</p>
+                    <p class="lang en" style="display:none;">3D modeling and animation using Blender.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- CAMBIAR TODA ESTA SECCION POR PROYECTOS O EXPERIENCIA LABORAL -->
     <section class="testimonials" id="testimonials">
         <div class="testimonials-box">
-            <h2 class="heading">testimonials</h2>
+            <h2 class="heading lang es">Testimonios</h2>
+            <h2 class="heading lang en" style="display:none;">Testimonials</h2>
+
             <div class="testimonials-timeline-item">
                 <img src="./images/dmcu2.JPG" alt="esto se cambia">
-                <h2> Health Connect App</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestias voluptas vel deleniti deserunt ad voluptates temporibus sed eum fugiat optio quibusdam numquam cumque maxime facere, quis suscipit aspernatur enim.</p>
+                <h2 class="lang es">Aplicación Health Connect</h2>
+                <h2 class="lang en" style="display:none;">Health Connect App</h2>
+                <p class="lang es">Una aplicación de salud diseñada para conectar pacientes y médicos.</p>
+                <p class="lang en" style="display:none;">A health app designed to connect patients and doctors.</p>
 
                 <img src="./images/dmcu2.JPG" alt="esto se cambia">
-                <h2> ARKANOID VIDEOGAME</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestias voluptas vel deleniti deserunt ad voluptates temporibus sed eum fugiat optio quibusdam numquam cumque maxime facere, quis suscipit aspernatur enim.</p>
+                <h2 class="lang es">Videojuego Arkanoid</h2>
+                <h2 class="lang en" style="display:none;">Arkanoid Videogame</h2>
+                <p class="lang es">Un remake del clásico juego de romper bloques.</p>
+                <p class="lang en" style="display:none;">A remake of the classic block-breaking game.</p>
 
                 <img src="./images/dmcu2.JPG" alt="esto se cambia">
-                <h2> SUPER MARIO BROS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestias voluptas vel deleniti deserunt ad voluptates temporibus sed eum fugiat optio quibusdam numquam cumque maxime facere, quis suscipit aspernatur enim.</p>
-<!--                 <div class="rating">
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                </div> -->
+                <h2 class="lang es">Super Mario Bros</h2>
+                <h2 class="lang en" style="display:none;">Super Mario Bros</h2>
+                <p class="lang es">Versión personalizada del juego clásico con nuevas características.</p>
+                <p class="lang en" style="display:none;">Custom version of the classic game with new features.</p>
             </div>
-
         </div>
     </section>
 
@@ -204,7 +224,33 @@
                 </p>
             </footer>
         </form>
-    </section>
+
+
+    <script>
+        // Cambia el idioma en función del botón seleccionado
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang); // Guarda la selección de idioma en localStorage
+            var elements = document.querySelectorAll('.lang');
+            elements.forEach(function(el) {
+                el.style.display = 'none'; // Oculta todo el contenido
+            });
+            
+            // Muestra solo el contenido del idioma seleccionado
+            var selectedLangElements = document.querySelectorAll('.lang.' + lang);
+            selectedLangElements.forEach(function(el) {
+                el.style.display = 'block';
+            });
+        }
+
+        // Al cargar la página, verifica si hay un idioma guardado
+        window.onload = function() {
+            var lang = localStorage.getItem('selectedLanguage') || 'es'; // Español por defecto
+            setLanguage(lang);
+        };
+    </script>
+</body>
+</html>
+
 
     <script src="script.js"></script>
 </body>

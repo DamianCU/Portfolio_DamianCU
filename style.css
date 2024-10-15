@@ -15,6 +15,31 @@
     --text-color: white;
     --main-color: #00ffee;
 }
+#language-selector{
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+#language-selector button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#language-selector button img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3.s ease, box-shadow 0.3.s ease;
+}
+#language-selector button:hover img{
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#language-selector button:active img{
+    transform: scale(0.95);
+}
 
 .home-img{
     width: 50%;
