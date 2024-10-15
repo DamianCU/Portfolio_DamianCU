@@ -280,26 +280,46 @@ span{
     margin: 5rem 0;
 }
 .education{
-    padding: 100px 15px;
+    padding: 50px 0px;
     background: var(--second-bg-color);
+}
+.education .heading{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
 }
 .education h2{
     margin-bottom: 5rem;
 }
 .timeline-items{
-    max-width: 1200px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid var(--main-color);
+/*     max-width: 1200px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    position:relative;
+    position:relative; */
 }
+.timeline-item{
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
 .timeline-items::before{
     content: "";
     position: absolute;
-    width: 5px;
+    left: -12px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--main-color);
+/*     width: 5px;
     height: 100%;
     background-color: var(--main-color);
-    left: calc(50% - 1px);
+    left: calc(50% - 1px); */
 }
 .timeline-item{
     margin-bottom: 40px;
@@ -329,12 +349,13 @@ span{
     top: 10px;
 }
 .timeline-date{
-    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 15px;
     font-weight: 800;
-    color: white;
     margin: 6px 0 15px;
 }
-.timeline_content{
+.timeline-content{
     background-color: var(--bg-color);
     border: 3px solid var(--main-color);
     padding: 30px 50px;
@@ -384,7 +405,7 @@ span{
     align-items: center;
     gap: 2.5rem;
 }
-.services-box{
+.service-box{
     background-color: var(--main-color);
     height: 300px;
     border-radius: 3rem;
@@ -408,12 +429,13 @@ span{
     padding: 5rem 5rem;
 }
 .service-info h4{
-    font-size: 3rem;
+    font-size: 4em;
     font-weight: 800;
     line-height: 2;
+    color: #007bff;
 }
 .service-info p{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 600;
     max-height: 100px;
     line-height: 1.7;
@@ -509,11 +531,14 @@ span{
     margin-top: 2rem;
 }
 .footer{
-    position: relative;
+ /*    position: relative; */
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 40px 0;
     background-color: var(--second-bg-color);
+    padding: 10px 0;
+    z-index: 100;
 }
 .footer .social{
     text-align: center;
