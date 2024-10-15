@@ -201,21 +201,22 @@ span{
 }
 
 #copy-email-btn {
-    background-color: #ff7a59;
-    color: white;
+    background-color: #0077ff;
+    color: var(--bg-color);
+    
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 #copy-email-btn:hover {
-    background-color: #ff5722;
+    background-color: #92d32a;
 }
 
 #copy-email-btn:active {
-    background-color: #ff3d00;
+    background-color: #097209;
 }
 
 
