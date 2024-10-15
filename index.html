@@ -15,21 +15,26 @@
         </div>
 
         <a href="#name" class="logo">Damián<span>Carrillo</span></a>
-        
-        <!-- Selector de idioma -->
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
         <nav class="navBar">
-            <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="active lang es">Inicio</a>
+            <a href="#home" class="active lang en" style="display:none;">Home</a>
+
+            <a href="#education" class="lang es">Educación</a>
+            <a href="#education" class="lang en" style="display:none;">Education</a>
+
+            <a href="#experience" class="lang es">Experiencia</a>
+            <a href="#experience" class="lang en" style="display:none;">Experience</a>
+
+            <a href="#contact" class="lang es">Contacto</a>
+            <a href="#contact" class="lang en" style="display:none;">Contact</a>
         </nav>
     </header>
-    
+
     <section class="home" id="home">
-        <div class="home-content">            
+        <div class="home-content">
             <div class="home-img">
                 <img src="./images/dmcu2.JPG" alt="main photo">
             </div>
@@ -38,20 +43,20 @@
                 <div class="lang es">
                     <h1>Hola, soy <span>Damián</span></h1>
                     <h3 class="text-animation">Soy un</h3>
-                    <p>Desarrollador principalmente frontend ['Perfeccionando Backend'] apasionado por el desarrollo de webs, videojuegos y todo tipo de apps</p>
+                    <p>Desarrollador principalmente frontend ['Perfeccionando Backend'] apasionado por el desarrollo de webs, videojuegos y todo tipo de apps.</p>
                 </div>
                 <!-- Texto en inglés -->
                 <div class="lang en" style="display:none;">
                     <h1>Hi, It's <span>Damián</span></h1>
                     <h3 class="text-animation">I'm a</h3>
-                    <p>Frontend developer ['Improving Backend'] passionate about web development, video games, and all kinds of apps</p>
+                    <p>Frontend developer ['Improving Backend'] passionate about web development, video games, and all kinds of apps.</p>
                 </div>
 
                 <div class="social-icons">
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
                     <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
-    
+
                 <div class="btn-group">
                     <a href="#" class="btn lang es">Contrátame</a>
                     <a href="#contact" class="btn lang es">Contacto</a>
@@ -59,6 +64,43 @@
                     <a href="#" class="btn lang en" style="display:none;">Hire Me</a>
                     <a href="#contact" class="btn lang en" style="display:none;">Contact</a>
                 </div>
+                <section id="contact">
+                    <h2>Contáctame</h2>
+                
+                    <div class="copy-email-container">
+                        <p id="email-text">damian.carrillo@ejemplo.com</p>
+                        <button id="copy-email-btn">Copiar Correo</button>
+                    </div>
+                
+                    <form action="">
+                        <!-- Otros elementos del formulario aquí -->
+                    </form>
+                
+                    <script>
+                        document.getElementById("copy-email-btn").addEventListener("click", function() {
+                            var emailText = document.getElementById("email-text").textContent;
+                            
+                            // Crea un campo de texto temporal
+                            var tempInput = document.createElement("input");
+                            tempInput.value = emailText;
+                            document.body.appendChild(tempInput);
+                            
+                            // Selecciona el texto y lo copia al portapapeles
+                            tempInput.select();
+                            document.execCommand("copy");
+                            
+                            // Elimina el campo de texto temporal
+                            document.body.removeChild(tempInput);
+                
+                            // Cambia el texto del botón por un breve tiempo
+                            var button = document.getElementById("copy-email-btn");
+                            button.textContent = "¡Copiado!";
+                            setTimeout(function() {
+                                button.textContent = "Copiar Correo";
+                            }, 2000); // Vuelve al texto original después de 2 segundos
+                        });
+                    </script>                
+                </section>
 
             </div>
         </div>
@@ -76,7 +118,7 @@
                     <h3>HackaBoss Bootcamp</h3>
                     <p class="lang es">Programa intensivo de desarrollo web con enfoque en Frontend y Backend.</p>
                     <p class="lang en" style="display:none;">Intensive web development program focused on Frontend and Backend.</p>
-                </div>                
+                </div>
             </div>
 
             <div class="timeline-item">
@@ -111,13 +153,13 @@
         </div>
     </section>
 
-    <section class="services" id="services">    
+    <section class="services" id="services">
         <h2 class="heading lang es">Servicios</h2>
         <h2 class="heading lang en" style="display:none;">Services</h2>
 
         <div class="services container">
             <div class="service-box">
-                <div class="service-info">  
+                <div class="service-info">
                     <h4>UI Design</h4>
                     <p class="lang es">Diseño de interfaces de usuario con un enfoque en la experiencia y usabilidad.</p>
                     <p class="lang en" style="display:none;">User interface design with a focus on experience and usability.</p>
@@ -125,7 +167,7 @@
             </div>
 
             <div class="service-box">
-                <div class="service-info">  
+                <div class="service-info">
                     <h4>Frontend Development</h4>
                     <p class="lang es">Desarrollo de interfaces web interactivas y responsivas utilizando las últimas tecnologías.</p>
                     <p class="lang en" style="display:none;">Development of interactive and responsive web interfaces using the latest technologies.</p>
@@ -133,7 +175,7 @@
             </div>
 
             <div class="service-box">
-                <div class="service-info">  
+                <div class="service-info">
                     <h4>Backend Development</h4>
                     <p class="lang es">Creación de servidores eficientes y escalables para aplicaciones web.</p>
                     <p class="lang en" style="display:none;">Building efficient and scalable servers for web applications.</p>
@@ -141,7 +183,7 @@
             </div>
 
             <div class="service-box">
-                <div class="service-info">  
+                <div class="service-info">
                     <h4>3D Artist Blender</h4>
                     <p class="lang es">Modelado y animación 3D utilizando Blender.</p>
                     <p class="lang en" style="display:none;">3D modeling and animation using Blender.</p>
@@ -178,53 +220,51 @@
     </section>
 
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
+        <h2 class="heading lang es">Contáctame</h2>
+        <h2 class="heading lang en" style="display:none;">Contact Me</h2>
 
         <form action="">
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Nombre Completo" class="lang es">
+                    <input type="text" placeholder="Full Name" class="lang en" style="display:none;">
+                    
+                    <input type="email" placeholder="Correo Electrónico" class="lang es">
+                    <input type="email" placeholder="Email" class="lang en" style="display:none;">
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
+                    <input type="number" placeholder="Teléfono" class="lang es">
+                    <input type="number" placeholder="Phone Number" class="lang en" style="display:none;">
+                    
+                    <input type="text" placeholder="Asunto" class="lang es">
+                    <input type="text" placeholder="Subject" class="lang en" style="display:none;">
                 </div>
             </div>
 
             <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje" class="lang es"></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" class="lang en" style="display:none;"></textarea>
+
+                <input type="submit" value="Enviar Mensaje" class="btn lang es">
+                <input type="submit" value="Send Message" class="btn lang en" style="display:none;">
             </div>
 
             <footer class="footer">
                 <div class="social">
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                    <a href="#"><i class='bx bxl-github'></i></a>                          
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
                 <ul class="list">
-                    <li>
-                        <a href="#">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">About Me</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#">Testimonials</a>
-                    </li>                    
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Testimonials</a></li>
                 </ul>
-                <p class="copyright">
-                    &#169 Damián Carrillo Ureña | All Rights Reserved
-                </p>
+                <p class="copyright">&#169 Damián Carrillo Ureña | Todos los derechos reservados</p>
             </footer>
         </form>
-
+    </section>
 
     <script>
         // Cambia el idioma en función del botón seleccionado
@@ -248,10 +288,5 @@
             setLanguage(lang);
         };
     </script>
-</body>
-</html>
-
-
-    <script src="script.js"></script>
 </body>
 </html>

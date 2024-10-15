@@ -188,6 +188,36 @@ span{
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
 }
+.copy-email-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#email-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#copy-email-btn {
+    background-color: #ff7a59;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#copy-email-btn:hover {
+    background-color: #ff5722;
+}
+
+#copy-email-btn:active {
+    background-color: #ff3d00;
+}
+
 
 .btn{
     display: inline-block;
