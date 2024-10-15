@@ -3,38 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damián Carrillo</title>
+    <title>Damián Carrillo Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
+        
+        <a href="#name" class="logo">Damián <span>Carrillo Ureña</span></a>
+        
+        <i class='bx bx-menu' id="menu-icon"></i>
+        
+        <nav class="navBar">
+            <a href="#home" class="active lang es">Inicio</a>
+            <a href="#home" class="active lang en" style="display:none;">Home</a>
+            
+            <a href="#education" class="lang es">Educación</a>
+            <a href="#education" class="lang en" style="display:none;">Education</a>
+            
+            <a href="#experience" class="lang es">Proyectos</a>
+            <a href="#experience" class="lang en" style="display:none;">Projects</a>
+            
+            <a href="#contact" class="lang es">Contacto</a>
+            <a href="#contact" class="lang en" style="display:none;">Contact</a>
+        </nav>
         <div id="language-selector">
             <button onclick="setLanguage('es')"><img src="./images/langEspañol.JPG" alt="Español"></button>
             <button onclick="setLanguage('en')"><img src="./images/langEnglish.JPG" alt="English"></button>
         </div>
-
-        <a href="#name" class="logo">Damián<span>Carrillo</span></a>
-
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navBar">
-            <a href="#home" class="active lang es">Inicio</a>
-            <a href="#home" class="active lang en" style="display:none;">Home</a>
-
-            <a href="#education" class="lang es">Educación</a>
-            <a href="#education" class="lang en" style="display:none;">Education</a>
-
-            <a href="#experience" class="lang es">Experiencia</a>
-            <a href="#experience" class="lang en" style="display:none;">Experience</a>
-
-            <a href="#contact" class="lang es">Contacto</a>
-            <a href="#contact" class="lang en" style="display:none;">Contact</a>
-        </nav>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
+            <!-- Div de la imagen principal -->
             <div class="home-img">
                 <img src="./images/dmcu2.JPG" alt="main photo">
             </div>

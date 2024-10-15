@@ -262,7 +262,7 @@ span{
 }
 
 .text-animation span:before{
-    content: "Web Developer";
+    content: "Web Developer", ;
     color: var(--main-color);
     animation: words 20s infinite;
 }
