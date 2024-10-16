@@ -457,7 +457,7 @@ span{
 }
 .services-container{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,3fr);
     align-items: center;
     gap: 2.5rem;
 }
@@ -467,6 +467,7 @@ span{
     border-radius: 3rem;
     border: 5px solid transparent;
     cursor: pointer;
+    overflow: scroll;
     transition:  0.4s ease-in-out;
 }
 .service-box:hover{
