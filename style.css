@@ -15,6 +15,7 @@
     --text-color: white;
     --main-color: #00ffee;
 }
+
 #language-selector{
     display: flex;
     gap: 10px;
@@ -45,30 +46,8 @@
     width: 50%;
 }
 
-html{
-    font-size: 60%;
-    overflow-x: hidden;
-}
 
-body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    left:0;
-    width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;    
-}
 
 .logo{
     font-size: 3rem;
@@ -104,10 +83,7 @@ header{
     display: none;
 }
 
-section{
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
-}
+
 
 .home{
     display: flex;
@@ -123,9 +99,7 @@ section{
     gap: 8rem; /* Ajusta la separación entre la imagen y el texto */
 }
 
-span{
-    color: var(--main-color);
-}
+
 
 .logo span{
     color: var(--main-color);
@@ -503,7 +477,7 @@ span{
 }
 .testimonials-box{
     background-size: cover;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
