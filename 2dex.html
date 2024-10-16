@@ -14,8 +14,8 @@
 
         <!-- Botones para seleccionar la lengua de la página -->
         <div class="language-selector">
-            <button onclick="setLanguage('es')"></button>
-            <button onclick="setLanguage('en')"></button>
+            <button onclick="setLanguage('es')"><img src="./images/langEspañol.JPG" alt="Español"></button>
+            <button onclick="setLanguage('en')"><img src="./images/englishFlag.JPG" alt="English"></button>
         </div>
 
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -34,6 +34,65 @@
             <a href="#aboutMe" class="lang en" style="display:none">About me</a>
         </nav>
     </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="home-img">
+                <img src="./images/dmcu2.JPG" alt="">
+            </div>
+            <div class="home-text">
+                <div class="lang es">
+                    <h1>Hola, soy <span>Damián</span></h1>
+                    <h3 class="text-animation"></h3>
+                    <p>Desarrollador principalmente frontend ['Perfeccionando Backend'] apasionado por el desarrollo de webs, videojuegos y todo tipo de apps.</p>
+                </div>
+                <div class="lang en" style="display:none;">
+                    <h1>Hi, It's <span>Damián</span></h1>
+                    <h3 class="text-animation">I'am a</h3>
+                    <p>Frontend developer ['Improving Backend'] passionate about web development, video games and all kinds of apps.</p>
+                </div>
+            </div>
+            <div class="contact">
+                <h2>Links de Contato</h2>
+                <ul>
+                    <li><box-icon name='envelope'></box-icon>dcu191089@hotmail.es</li>
+                    <li><box-icon type='solid' name='phone'></box-icon>+34 608808910</li>
+                    <li><box-icon type='logo' name='linkedin-square'></box-icon>www.linkedin.com/in/dcu7548</li>
+                    <li><box-icon type='logo' name='github'></box-icon>https://github.com/DamianCu/</li>
+                </ul>
+
+            </div>
+            <!-- Vamos a hacer un apartado hablando de las diferentes skills y en que proporcion conocemos o queremos dar importancia -->
+            <div class="skills">
+                <h2 class="lang es">Skills</h2>
+                <h2 class="lang en" style="display:none;">Skills</h2>
+                <div class="mainSkills">
+                    <h3 class="lang es">Principales</h3>
+                    <h3 class="lang en" style="display: none;">Main</h3>
+                    <ul>
+                        <li><i class='bx bxl-javascript' ></i></li>
+                        <li><i class='bx bxl-css3' ></i></li>
+                        <li><i class='bx bxl-html5' ></i></li>
+                        <li><i class='bx bxl-blender' ></i></li>
+                    </ul>
+                </div>
+                <div class="secondarySkills">
+                    <h3 class="lang es">Secundarias</h3>
+                    <h3 class="lang en" style="display: none;">Secondary</h3>
+                    <ul>
+                        <li><i class='bx bxl-react' ></i></li>
+                        <li><i class='bx bxl-nodejs' ></i></li>
+                        <li><i class='bx bxl-mongodb'></i></li>
+                        <li><i class='bx bxl-tailwind-css' ></i></li>
+                        <li><i class='bx bxl-python' ></i></li>
+                        <li><i class='bx bxl-typescript' ></i></li>
+                        <li><i class='bx bxl-angular' ></i></li>                    
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
     
