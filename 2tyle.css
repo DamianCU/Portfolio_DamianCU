@@ -31,7 +31,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 15%;
+    padding: 0.5rem 5%;
     background: rgba(0, 0, 0, 1);
     backdrop-filter: blur(10px);
     display: flex;
@@ -46,6 +46,11 @@ section{
 span{
     color: var(--main-color);
 }
+ul li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
 .mainLogo{
     font-size: 2rem;
@@ -56,11 +61,11 @@ span{
 }
 
 .mainLogo:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .mainLogo span{
     color: var(--main-color);
-    text-shadow: 0 0 25px var(--main-color);
+    text-shadow: 0 0 30px var(--main-color);
 }
 
 .language-selector{
@@ -91,6 +96,7 @@ span{
 }
 
 .navBar {
+    color: var(--main-color);
     display: none;
     flex-direction: column;
     gap: 2rem;
@@ -103,14 +109,22 @@ span{
     z-index: 10;
     align-items: center;
     justify-content: center;
-    transition: max-height 0.3 ease;
+    transition: opacity 0.3s ease;
 }
-.navBar.active{
+.navBar.active {
+    color: var(--main-color);
     display: flex;
+    opacity: 1;
+    z-index: 100;
+    overflow: hidden;
+}
+.navBar.active a{
+    color: var(--text-color);
+    border-bottom: 3px solid transparent;
 }
 
 .navBar a:hover, .navBar a.active{
-    color: var(--main-color);
+    color: var(--main-color) !important;
     border-bottom: 3px solid var(--main-color);
 }
 
@@ -167,8 +181,9 @@ span{
 }
     
 .home-content p{
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 2rem;
+    margin: 30px;
+    font-weight: 700;
     line-height: 1.8;
     max-width: 100%;
 }
@@ -190,6 +205,7 @@ span{
     }
     #menu-icon{
         display: none;
+        left: 2px;
     }
     .navBar {
         display: flex;
@@ -199,8 +215,10 @@ span{
         padding: 0;
     }
     .navBar a {
+        color: var(--text-color) !important;
         margin-left: 2rem;
         font-size: 1.8rem;
+        transition: color 0.3s ease;
     }
 
     .home-content {
@@ -223,20 +241,26 @@ span{
     .home-content h3 {
         font-size: 3.5rem;
     }
-    .text.animation{
+    .text-animation{
         font-size: 24px;
         font-weight: 600;
         min-width: 200px;
+        display: inline-block;
     }
-    .text.animation span{
+    .text-animation span{
         position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid var(--main-color);
+        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
     }
-    .text.animation span::before{
+    .text-animation span::before{
         content: "Web Developer";
         color: var(--main-color);
         animation: words 20s infinite;        
     }
-    .text.animation span::after{
+    .text-animation span::after{
         content: "";
         background-color: var(--bg-color);
         position: absolute;
@@ -246,13 +270,18 @@ span{
         right: -8px;
         animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
     }
-}
+    .contact{
+        display: flex;
+        background-color: white;
 
-@keyframes cursor{
-    to{
-        border-left: 2px solid var(--main-color);
+    }
+    .contact h2{
+        color: var(--text-color);
+        font-size: 3rem;
+        margin-bottom: 1rem; 
     }
 }
+
 @keyframes words{
     0%,
     20%{
@@ -271,6 +300,27 @@ span{
         content: "Video Games Developer in Progress";
     }
 }
+
+@keyframes cursor{
+    0%{
+        border-color: transparent;
+    }
+    50%{
+        border-color: var(--main-color);
+    }
+    100%{
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
 /* Para pantallas de escritorio (1024px o más) */
 @media (min-width: 1024px) {
     .container {
