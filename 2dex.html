@@ -18,9 +18,14 @@
             <button onclick="setLanguage('en')"><img src="./images/englishFlag.JPG" alt="English"></button>
         </div>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <div id="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
 
         <nav class="navBar">
+            <a href="#home" class="lang es">Inicio</a>
+            <a href="#home" class="lang en" style="display:none">Home</a>
+
             <a href="#formation" class="lang es">Formación</a>
             <a href="#formation" class="lang en" style="display:none">Formation</a>
 
@@ -77,8 +82,8 @@
                     </ul>
                 </div>
                 <div class="secondarySkills">
-                    <h3 class="lang es">Secundarias</h3>
-                    <h3 class="lang en" style="display: none;">Secondary</h3>
+                    <h3 class="lang es">En Progreso</h3>
+                    <h3 class="lang en" style="display: none;">In Progress</h3>
                     <ul>
                         <li><i class='bx bxl-react' ></i></li>
                         <li><i class='bx bxl-nodejs' ></i></li>

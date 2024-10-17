@@ -21,6 +21,8 @@ html{
 }
 
 body{
+    font-size: 1.6rem;
+    line-height: 1.5;
     background-color: var(--bg-color); 
     color: var(--text-color);
 }
@@ -29,7 +31,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
+    padding: 2rem 15%;
     background: rgba(0, 0, 0, 1);
     backdrop-filter: blur(10px);
     display: flex;
@@ -39,7 +41,7 @@ header{
 }
 section{
     min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    padding: 5rem 5%;
 }
 span{
     color: var(--main-color);
@@ -51,7 +53,7 @@ span{
     font-weight: 800;
 }
 .mainLogo{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
@@ -68,8 +70,8 @@ span{
 
 .language-selector{
     display: flex;
-    gap: 10px;
-    margin-right: 20px;
+    gap: 5px;
+    margin-right: 10px;
 
 }
 .language-selector button{
@@ -80,8 +82,8 @@ span{
     transition: 0.3s ease, box-shadow 0.3s ease;
 }
 .language-selector button img{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -94,12 +96,12 @@ span{
 }
 
 .navBar a{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-left: 2rem;
     font-weight: 500;
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .navBar a:hover, .navBar a.active{
@@ -108,69 +110,118 @@ span{
 }
 
 #menu-icon{
-    font-size: 3.6rem;
+    font-size: 3rem;
     color: var(--main-color);
     display: none;
 }
-/* Probando sugerencia CHATGPT PERO NO SE SI */
-@media (max-width: 768px) {
-    .home{
-        flex-direction: column;
-        gap: 2rem;
-/*         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15rem; */
-    }
-    .home-content{
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-/*         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8rem;
-    } */
-    .home-img{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .home-img img{
-        width: 50vw;
-        top: 0;
-        border-radius: 50%;
-        top: 3rem;
-        box-shadow: 0 0 25px var(--main-color);
-        cursor: pointer;
-        transition: 0.4s ease-in-out;   
-    }
-    .home-text{
-        width: 100%;
-    }
-    .home-content h1{
-        font-size: 7rem;
-        font-weight: 700;
-        margin-top: 1.5rem;
-        line-height: 1;        
-    }
-    .home-content h3{
-        margin-bottom: 2rem;
-        margin-top: 1rem;
-        font-size: 3.5rem;    
-    }
-    
-    .home-content p{
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.8;
-        max-width: 1000px;
-    }
 
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    /* gap: 15rem;  */  
 }
+    
+.home-content{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+.home-img{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.home-img img{
+    width: 60vw;    
+    border-radius: 50%;
+    top: 3rem;
+    box-shadow: 0 0 25px va(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;   
+}
+.home-text{
+    width: 100%;
+}
+.home-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1.2;        
+}
+.home-content h3{
+    margin-bottom: 1.5rem;
+    margin-top: .8rem;
+    font-size: 2.5rem;    
+}
+    
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 100%;
+}
+
 .home-img img:hover{
     box-shadow: 0 0 25px var(--main-color),
     0 0 50px var(--main-color),
     0 0 100px var(--main-color);
 }
 
+/* Para pantallas de tablets (768px o más) */
+@media (min-width: 768px) {
+    header {
+        padding: 4rem 12%;
+    }
+
+    .mainLogo {
+        font-size: 3rem;
+    }
+
+    .navBar a {
+        font-size: 1.8rem;
+        margin-left: 4rem;
+    }
+
+    .home-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .home-img {
+        width: 50%;
+    }
+
+    .home-img img {
+        width: 30vw;
+    }
+
+    .home-content h1 {
+        font-size: 7rem;
+    }
+
+    .home-content h3 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Para pantallas de escritorio (1024px o más) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .home-img {
+        width: 40%;
+    }
+
+    .home-img img {
+        width: 25vw;
+    }
+}
