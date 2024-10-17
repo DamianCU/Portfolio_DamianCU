@@ -95,13 +95,23 @@ span{
     transform: scale(0.95);
 }
 
-.navBar a{
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-left: 2rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 2px solid transparent;
+.navBar {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--second-bg-color);
+    width: 100%;
+    padding: 2rem 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    transition: max-height 0.3 ease;
+}
+.navBar.active{
+    display: flex;
 }
 
 .navBar a:hover, .navBar a.active{
@@ -112,7 +122,8 @@ span{
 #menu-icon{
     font-size: 3rem;
     color: var(--main-color);
-    display: none;
+    cursor: pointer;
+    display: block;
 }
 
 .home{
@@ -182,10 +193,19 @@ span{
     .mainLogo {
         font-size: 3rem;
     }
-
+    #menu-icon{
+        display: none;
+    }
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+    }
     .navBar a {
+        margin-left: 2rem;
         font-size: 1.8rem;
-        margin-left: 4rem;
     }
 
     .home-content {
