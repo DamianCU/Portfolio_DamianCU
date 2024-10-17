@@ -194,6 +194,18 @@ ul li{
     0 0 100px var(--main-color);
 }
 
+.contact{
+    display: flexbox;
+    padding: 20px;
+    border: 3px dashed rgb(32, 32, 32);
+    box-shadow: var(--main-color);
+}
+.contact h2{
+    color: var(--text-color);
+    font-size: 3rem;
+    margin-bottom: 1rem; 
+}
+
 /* Para pantallas de tablets (768px o más) */
 @media (min-width: 768px) {
     header {
