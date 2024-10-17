@@ -48,11 +48,6 @@ span{
 }
 
 .mainLogo{
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 800;
-}
-.mainLogo{
     font-size: 2rem;
     color: var(--text-color);
     font-weight: 800;
@@ -152,7 +147,7 @@ span{
     width: 60vw;    
     border-radius: 50%;
     top: 3rem;
-    box-shadow: 0 0 25px va(--main-color);
+    box-shadow: 0 0 50px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;   
 }
@@ -228,8 +223,54 @@ span{
     .home-content h3 {
         font-size: 3.5rem;
     }
+    .text.animation{
+        font-size: 24px;
+        font-weight: 600;
+        min-width: 200px;
+    }
+    .text.animation span{
+        position: relative;
+    }
+    .text.animation span::before{
+        content: "Web Developer";
+        color: var(--main-color);
+        animation: words 20s infinite;        
+    }
+    .text.animation span::after{
+        content: "";
+        background-color: var(--bg-color);
+        position: absolute;
+        width: calc(100% + 8px);
+        height: 100%;
+        border-left: 3px solid var(--bg-color);
+        right: -8px;
+        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    }
 }
 
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Frontend Developer";
+    }
+    21%,
+    40%{
+        content: "Backend Developer in progress";
+    }
+    41%,
+    60%{
+        content: "3D Artist";
+    }
+    61%,
+    80%{
+        content: "Video Games Developer in Progress";
+    }
+}
 /* Para pantallas de escritorio (1024px o más) */
 @media (min-width: 1024px) {
     .container {
