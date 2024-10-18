@@ -207,6 +207,11 @@ ul li{
     font-size: 3rem;
     margin-bottom: 1rem; 
 }
+.contact a{
+    color: var(---color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
 .skills{
     margin-top: 15rem;
@@ -236,6 +241,85 @@ ul li{
 }
 .skills i{
     font-size: 8rem;
+}
+
+
+.formation{
+    display: flex;
+    flex-direction: column;
+}
+.formation-content{
+    gap: 2rem;
+    justify-content: center;
+}
+.formation-content h2{
+    color: RGB(72, 251, 71);    
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;   
+}
+.education, .courses{
+    background-color: #151514;
+    padding: 2rem;
+    border-radius: 50px;
+    box-shadow: 0 0 15px var(--main-color);
+    margin-bottom: 2rem;
+}
+.education h3, .courses h2{
+    color: var(--titles-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.course h3{
+    list-style-type: disc;
+    color: #f15d8e;
+    gap: 4rem; 
+    padding: 1rem;
+    
+}
+.course ul{
+    padding-left: 2rem;
+    
+}
+.course ul li{
+    margin-bottom: 0.8rem;
+    list-style-type: disc;
+}
+.bootcamp, course{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 238. 0.2);
+    margin-bottom: 1.5rem;
+}
+.bootcamp h4{
+    color: var(--titles-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.bootcamp p, .course ul{
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.course a{
+    color: var(--main-color);
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+}
+.course a:hover{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+.experience{
+    margin-top: 15rem;
+    gap: 20px;
+    justify-content: center;
 }
 
 /* Para pantallas de tablets (768px o más) */
