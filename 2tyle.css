@@ -247,6 +247,7 @@ ul li{
 .formation{
     display: flex;
     flex-direction: column;
+    padding: 2rem;
 }
 .formation-content{
     gap: 2rem;
@@ -316,11 +317,48 @@ ul li{
     background-color: var(--main-color);
     color: var(--bg-color);
 }
-.experience{
+
+.experience {
     margin-top: 15rem;
-    gap: 20px;
+    display:flex;
     justify-content: center;
+    padding: 2rem;
+
 }
+.experience-content{
+    max-width: 100%;
+}
+
+.experience-content h2 {
+    color: #ff66cc;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.job {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: #1d0202;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgb(114, 1, 134)
+}
+
+.job h3 {
+    font-size: 2rem;
+    color: #00ffee;
+    margin-bottom: 1rem;
+}
+
+.job p {
+    font-size: 1.6rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
 
 /* Para pantallas de tablets (768px o más) */
 @media (min-width: 768px) {
@@ -406,18 +444,19 @@ ul li{
     .contact h2{
         color: var(--text-color);
         font-size: 2rem;
-        margin-bottom: 1rem; 
-/*         color: #fff;
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px #0fa,
-            0 0 82px #0fa,
-            0 0 92px #0fa,
-            0 0 102px #0fa,
-            0 0 151px #0fa;
-         */
+        margin-bottom: 1rem;
+    }
+    .experience-content h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .job h3 {
+        font-size: 1.8rem;
+    }
+
+    .job p {
+        font-size: 1.4rem;
     }
 }
 
