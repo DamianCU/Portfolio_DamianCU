@@ -30,7 +30,7 @@ navLinks.forEach(link => {
 
 
 /* Animación chula del h3 del home */
-const words = ["Frontend Developer", "Backend Developer in progress", "3D Artist", "Video Games Developer in Progress", "your future partner"];
+const words = ["Frontend Developer", "Backend Developer in progress", "3D Artist", "Video Games Developer in Progress"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

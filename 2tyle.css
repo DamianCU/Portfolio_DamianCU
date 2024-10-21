@@ -17,7 +17,7 @@
     --titles-color: #48fb47;
 }
 html{
-    font-size: 60%;
+    font-size: 62.5%;
     overflow-x: hidden;
 }
 
@@ -32,7 +32,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0.5rem 5%;
+    padding: 1rem 5%;
     background: rgba(0, 0, 0, 1);
     backdrop-filter: blur(10px);
     display: flex;
@@ -159,7 +159,9 @@ ul li{
 }
  
 .home-img img{
-    width: 60vw;    
+    max-width: 100%;
+    /* width: 60vw; */
+    height: auto;    
     border-radius: 50%;
     top: 3rem;
     box-shadow: 0 0 50px var(--main-color);
@@ -177,7 +179,7 @@ ul li{
 }
 .home-content h3{
     margin-bottom: 1.5rem;
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     font-size: 2.5rem;    
 }
     
@@ -191,8 +193,8 @@ ul li{
 
 .home-img img:hover{
     box-shadow: 0 0 25px var(--main-color),
-    0 0 50px var(--main-color),
-    0 0 100px var(--main-color);
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
 }
 
 .contact{
@@ -220,7 +222,7 @@ ul li{
 }
 .skills h2{
     color: RGB(72, 251, 71);
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 1rem;
 }
 .skills ul{
@@ -255,7 +257,7 @@ ul li{
 }
 .formation-content h2{
     color: RGB(72, 251, 71);    
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 4rem;
     text-align: center;
     width: 100%;   
@@ -269,7 +271,7 @@ ul li{
 }
 .education h3, .courses h2{
     color: var(--titles-color);
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 .course h3{
@@ -296,7 +298,7 @@ ul li{
 }
 .bootcamp h4{
     color: var(--titles-color);
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 .bootcamp p, .course ul{
@@ -318,8 +320,9 @@ ul li{
     color: var(--bg-color);
 }
 
+
 .experience {
-    margin-top: 15rem;
+    margin-top: 20rem;
     display:flex;
     justify-content: center;
     padding: 2rem;
@@ -331,7 +334,7 @@ ul li{
 
 .experience-content h2 {
     color: #ff66cc;
-    font-size: 3.5rem;
+    font-size: 6rem;
     text-align: center;
     margin-bottom: 3rem;
     padding-bottom: 1rem;
@@ -343,64 +346,69 @@ ul li{
     padding: 2rem;
     background-color: #1d0202;
     border-radius: 10px;
-    box-shadow: 0 0 50px rgb(114, 1, 134)
+    box-shadow: 0 0 80px rgb(196, 8, 229)
 }
 
 .job h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #00ffee;
     margin-bottom: 1rem;
 }
 
 .job p {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: #ccc;
     line-height: 1.6;
 }
 
 
 .projects{
-    margin-top: 15rem;
+    margin-top: 30rem;
     gap: 2rem;
-    padding: 2rem;
+    padding: 5rem;
     background-color: #151514;
-    border-radius: 10px;
-    box-shadow: 0 0 25px var(--main-color);
+    /* border-radius: 10px */;
+    box-shadow: 0 0 150px rgba(5, 5, 240, 0.979);
 }
 .projects-content{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
 }
 .projects-content h2{
-    color: var(--titles-color);
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    color: var(--main-color);
+    font-size: 6rem;
+    margin-bottom: 6rem;
 }
 .project{
     background-color: var(--second-bg-color);
     border-radius: 10px;
     padding: 1.5rem;
+    gap: 3rem;
     width: 100%;
     max-width: 100%;
-    box-shadow: 0 0 100px rgba(241, 237, 41, 0.2);
+    box-shadow: 0 0 50px rgba(5, 5, 240, 0.979);
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    margin-bottom: 20px;
+    align-items: center;
 }
 .project-img{
-    width: 100%;
+    max-width: 200px;
     height: auto;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
+
 .project h3{
     font-size: 3rem;
-    color: #f88818;
+    color: var(--titles-color);
     margin-bottom: 0.5rem;
 }
 .project p{
-    font-size: 1.6rem;
+    font-size: 2rem;
     color:#ccc;
     line-height: 1.5;
 }
@@ -504,16 +512,83 @@ ul li{
     .job p {
         font-size: 1.4rem;
     }
-    .projects-content h2{
-        font-size: 4rem;
+    .projects-content{
+        grid-template-columns: repeat(2, 1fr);
     }
+    .project{
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+        align-items: center;
+        gap: 2rem;
+    }
+    .project img{
+        
+    }
+    
     .project h3{
         font-size: 2.2rem;
+        text-align: center;
     }
     .project p{
         font-size: 1.4rem;
+        text-align: right;
     }
 }
+
+@media (min-width:1024px) {
+    .container{
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .home-img {
+        width: 40%;
+    }
+    .home-img img{
+        max-width: 25vw;
+    }
+    .project{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .projects-content{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .home-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .home-img{
+        flex: 1;
+        max-width: 45%;
+    }
+    .home-text{
+        flex: 1;
+        max-width: 55%;
+        text-align: right;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        display: flexbox;
+        justify-content: center;
+        
+    }
+    .home-content h3{
+        font-size: 4rem;
+    }
+    .skills h2{
+        font-size: 5rem;
+    }
+    .skills li {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 
 @keyframes words{
     0%,
@@ -551,21 +626,5 @@ ul li{
     }
     to{
         width: 100%;
-    }
-}
-
-/* Para pantallas de escritorio (1024px o más) */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 960px;
-        margin: 0 auto;
-    }
-
-    .home-img {
-        width: 40%;
-    }
-
-    .home-img img {
-        width: 25vw;
     }
 }
