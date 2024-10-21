@@ -36,7 +36,7 @@ header{
     background: rgba(0, 0, 0, 1);
     backdrop-filter: blur(10px);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     z-index: 5;   
 }
@@ -98,18 +98,11 @@ ul li{
 
 .navBar {
     color: var(--main-color);
-    display: none;
-    flex-direction: column;
     gap: 2rem;
-    position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--second-bg-color);
-    width: 100%;
-    padding: 2rem 0;
     z-index: 10;
     align-items: center;
-    justify-content: center;
     transition: opacity 0.3s ease;
 }
 .navBar.active {
@@ -176,14 +169,16 @@ ul li{
     line-height: 1.2;        
 }
 .text-animation{
-    width: 370.81px;
-    height: 90px;
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
     margin-top: 0.8rem;
-    font-size: 2.5rem;    
+      
 }
     
-.home-content p{
+.home-text p{
     font-size: 2rem;
     margin: 30px;
     font-weight: 700;
@@ -198,7 +193,7 @@ ul li{
 }
 
 .contact{
-    display: flexbox;
+    display: block;
     padding: 20px;
     margin-top: 10rem;
     border: 3px dashed rgb(32, 32, 32);
@@ -250,6 +245,7 @@ ul li{
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    margin: 15%;
 }
 .formation-content{
     gap: 2rem;
@@ -258,21 +254,25 @@ ul li{
 .formation-content h2{
     color: RGB(72, 251, 71);    
     font-size: 6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     text-align: center;
     width: 100%;   
 }
 .education, .courses{
     background-color: #151514;
-    padding: 2rem;
+    padding: 2rem;    
     border-radius: 50px;
     box-shadow: 0 0 15px var(--main-color);
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
 }
 .education h3, .courses h2{
     color: var(--titles-color);
     font-size: 4rem;
     margin-bottom: 1rem;
+}
+
+.experience-content{
+    padding: 0 10% 0 10% ;
 }
 .course h3{
     list-style-type: disc;
@@ -442,8 +442,8 @@ ul li{
     }
 
     .home-content {
-        flex-direction: row;
-        text-align: left;
+        flex-direction: column;
+
     }
 
     .home-img {
@@ -458,14 +458,9 @@ ul li{
         font-size: 7rem;
     }
 
-    .home-text h3{
-        
-    }
-    .text-animation{
-        height: 90px;
-        width: 370.81px;
-        font-size: 24px;
-        font-weight: 600;
+    .text-animation{        
+        width: 90%;
+        font-size: 3rem;
         min-width: 200px;
         display: inline-block;
     }
@@ -526,9 +521,6 @@ ul li{
         align-items: center;
         gap: 2rem;
     }
-    .project img{
-        
-    }
     
     .project h3{
         font-size: 2.2rem;
@@ -541,9 +533,17 @@ ul li{
 }
 
 @media (min-width:1024px) {
-    .container{
-        max-width: 960px;
-        margin: 0 auto;
+    header{
+        padding: 3rem;
+        margin: 0;
+    }
+    .mainLogo{
+        width: 500px;
+        padding-left: 4rem;
+    }
+    .navBar{
+        width: 700px;
+        padding-right: none;
     }
     .home-img {
         width: 40%;
@@ -561,11 +561,18 @@ ul li{
 }
 
 @media (min-width: 1440px) {
-    .home-content{
+    .mainLogo{
+        width: 65%;
+        padding-left: 3rem;
+    }
+    .navBar{
+        margin-right: 3rem;
+    }
+    .home-content{        
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
+        flex-direction: row;    
     }
     .home-img{
         flex: 1;
@@ -574,17 +581,45 @@ ul li{
     .home-text{
         flex: 1;
         max-width: 55%;
-        text-align: right;
+        text-align: left;
+        padding-left: 8rem;
     }
-    .home-content h1{
-        font-size: 8rem;
+    .home-text h1{
+        font-size: 10rem;
         display: flexbox;
         justify-content: center;
         
     }
-    .home-content h3{
-        font-size: 4rem;
+    .text-animation{
+        width: 700px;
+        height: 100px;
+        font-size: 3.5rem;
     }
+    .text-animation span{
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid var(--main-color);
+        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
+    }
+    .text-animation span::before{
+        width: 370.81px;
+        height: 90px;
+        content: "Web Developer";
+        color: var(--main-color);
+        animation: words 20s infinite;        
+    }
+    .text-animation span::after{
+        content: "";
+        background-color: var(--bg-color);
+        position: absolute;
+        width: 370.81px;
+        height: 90px;
+        border-left: 3px solid var(--bg-color);
+        right: -8px;
+        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    
     .skills h2{
         font-size: 5rem;
     }
@@ -597,19 +632,19 @@ ul li{
 
 @keyframes words{
     0%,
-    20%{
+    25%{
         content: "Frontend Developer";
     }
-    21%,
-    40%{
+    26%,
+    50%{
         content: "Backend Developer in progress";
     }
-    41%,
-    60%{
+    51%,
+    75%{
         content: "3D Artist";
     }
-    61%,
-    80%{
+    76%,
+    100%{
         content: "Video Games Developer in Progress";
     }
 }
