@@ -114,8 +114,7 @@ ul li{
     border-radius: 10%;
     box-shadow: 0 1rem 2rem var(--main-color);
     z-index: 10;
-    padding: 1rem;
-    
+    padding: 1rem;  
 
 }
 .navBar.active {
@@ -461,25 +460,45 @@ ul li{
     }
     
     .mainLogo {
-        font-size: 3rem;
-        
+        font-size: 4rem;
+        width: 80%;        
     }
     .mainLogo:hover{
         transform: translateX(2%);
     }
-    #menu-icon{
-        display: none;
-        left: 2px;
+    .language-selector{
+        width: 10%;
+    }
+    #menu-icon{ 
+        font-size: 6rem;       
+        width: 7rem;
+        align-items: center;
     }
     .navBar {
-        display: flex;
+        display: none;
         flex-direction: row;
         position: static;
         background-color: transparent;
         padding: 0;
     }
+    
+    .navBar {
+        display: none;
+        flex-direction: row;
+        position: absolute;
+        top: 100%;
+        background-color: var(--main-color);
+        border-radius: 5rem;
+        box-shadow: 0 1rem 5rem var(--main-color);
+        z-index: 10;
+        padding: 1rem;
+    }
     .navBar a {
-        color: var(--text-color) !important;
+        color: var(--bg-color) !important;
+        background-color: var(--main-color);
+        border-radius: 1rem;
+        justify-content: center;
+        padding: 0.5rem;
         margin-left: 2rem;
         font-size: 1.8rem;
         transition: color 0.3s ease;
@@ -491,7 +510,7 @@ ul li{
     }
 
     .home-img {
-        width: 50%;
+        width: 70%;
     }
 
     .home-img img {
@@ -566,7 +585,7 @@ ul li{
         margin: 0;
     }
     .mainLogo{
-        width: 500px;
+        width: 90%;
         padding-left: 4rem;
     }
     .navBar{
@@ -596,6 +615,7 @@ ul li{
     .navBar{
         margin-right: 3rem;
     }
+
     .home-content{        
         display: flex;
         justify-content: center;
