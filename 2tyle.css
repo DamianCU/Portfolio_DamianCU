@@ -199,7 +199,7 @@ ul li{
 
 .contact{
     display: block;
-    padding: 20px;
+    padding: 2rem;    
     margin-top: 10rem;
     border: 3px dashed rgb(32, 32, 32);
     box-shadow: var(--main-color);
@@ -217,42 +217,73 @@ ul li{
 
 .skills{
     margin-top: 15rem;
-    gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
 }
 .skills h2{
+    text-align: center;
     color: RGB(72, 251, 71);
     font-size: 6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+.skills h3{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
 }
 .skills ul{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
-
+.mainSkills, .secondarySkills{
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+}
 .skills li{
-    width: 100px;
-    height: 100px;
+    width: 30%;
+    max-width: 150px;
+    height: 150px;
     color: var(--main-color);
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 5px;
     font-size: 1.6rem;
     margin: 10px;
     transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tooltip{
+    display: none;
+    font-size: 5rem;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding:  1rem;
+    border-radius: 20%;
+    font-size: 0.8rem;
+    z-index: 10;
+    white-space: nowrap;
 }
 .skills i{
     font-size: 8rem;
 }
 
-
 .formation{
+    width: ;
     display: flex;
     flex-direction: column;
     padding: 2rem;
     margin: 15%;
 }
 .formation-content{
+    width: 100%;
     gap: 2rem;
     justify-content: center;
 }

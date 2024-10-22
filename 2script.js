@@ -6,8 +6,8 @@ let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const typingElement = document.querySelector('.text-animation span');
-const typingSpeed = 70; // Velocidad de escribir
-const deletingSpeed = 35; // Velocidad de borrar
+const typingSpeed = 60; // Velocidad de escribir
+const deletingSpeed = 40; // Velocidad de borrar
 const delayBetweenWords = 1500; // Pausa entre palabras
 
 // Función de animación
@@ -112,3 +112,23 @@ document.addEventListener('click', function(event) {
 
 // Iniciar la animación de escritura al cargar la página
 typeWords();
+
+
+const skills = document.querySelectorAll('.skills li');
+
+skills.forEach(skill => {
+    skill.addEventListener('mousemove', function(event) {
+        const tooltip = this.querySelector('.tooltip');
+        tooltip.style.display = 'block'; // Muestra el tooltip
+
+        // Posiciona el tooltip cerca del ratón
+        tooltip.style.left = event.pageX + 10 + 'px'; // Ajusta la posición
+        tooltip.style.top = event.pageY + 10 + 'px';
+    });
+
+    skill.addEventListener('mouseout', function() {
+        const tooltip = this.querySelector('.tooltip');
+        tooltip.style.display = 'none'; // Oculta el tooltip al salir
+    });
+});
+
