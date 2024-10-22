@@ -26,9 +26,12 @@ body{
     line-height: 1.5;
     background-color: var(--bg-color); 
     color: var(--text-color);
+    padding-top: 5rem;
+    overflow-y: auto;
+    
 }
 header{
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,15 +98,31 @@ ul li{
     transform: scale(1);
 }
 
+#menu-icon{
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
 .navBar {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: rgb(15, 1, 28);
+    border-radius: 10%;
+    box-shadow: 0 1rem 2rem var(--main-color);
+    z-index: 10;
+    padding: 1rem;
+    
+
 }
 .navBar.active {
-    color: var(--main-color);
     display: flex;
-    opacity: 1;
-    z-index: 100;
-    overflow: hidden;
+}
+.navBar a{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
 }
 .navBar.active a{
     color: var(--text-color);
@@ -111,16 +130,10 @@ ul li{
 }
 
 .navBar a:hover, .navBar a.active{
-    color: var(--main-color) !important;
-    border-bottom: 3px solid var(--main-color);
+    color: var(--hover-color);
+    border-bottom: 0.4rem solid var(--main-color);
 }
 
-#menu-icon{
-    font-size: 3rem;
-    color: var(--main-color);
-    cursor: pointer;
-    display: block;
-}
 
 .home{
     display: flex;
@@ -163,12 +176,11 @@ ul li{
 }
 .text-animation{
     width: 100%;
-    height: auto;
-    max-width: 700px;
-    font-size: 2.5rem;
+    height: 10rem;
+    max-width: 100%;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    margin-top: 0.8rem;
-      
+    margin-top: 0.8rem;      
 }
     
 .home-text p{
@@ -406,6 +418,11 @@ ul li{
     line-height: 1.5;
 }
 
+::-webkit-scrollbar{
+    width: 3rem;
+    height: 3rem;
+}
+
 
 /* Para pantallas de tablets (768px o más) */
 @media (min-width: 768px) {
@@ -457,34 +474,18 @@ ul li{
 
     .text-animation{        
         width: 90%;
+        height: 10rem;
         font-size: 3rem;
         min-width: 200px;
         display: inline-block;
     }
+   
     .text-animation span{
         position: relative;
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
         border-right: 2px solid var(--main-color);
-        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
-    }
-    .text-animation span::before{
-        width: 370.81px;
-        height: 90px;
-        content: "Web Developer";
-        color: var(--main-color);
-        animation: words 20s infinite;        
-    }
-    .text-animation span::after{
-        content: "";
-        background-color: var(--bg-color);
-        position: absolute;
-        width: 370.81px;
-        height: 90px;
-        border-left: 3px solid var(--bg-color);
-        right: -8px;
-        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
     }
     
     .contact{
@@ -598,14 +599,9 @@ ul li{
         white-space: nowrap;
         overflow: hidden;
         border-right: 2px solid var(--main-color);
-        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
     }
     .text-animation span::before{
-        width: 370.81px;
-        height: 90px;
-        content: "Web Developer";
-        color: var(--main-color);
-        animation: words 20s infinite;        
+        content: "";     
     }
     .text-animation span::after{
         content: "";
@@ -615,7 +611,7 @@ ul li{
         height: 90px;
         border-left: 3px solid var(--bg-color);
         right: -8px;
-        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+        animation: cursor 0.6s infinite;
     
     .skills h2{
         font-size: 5rem;
@@ -666,3 +662,42 @@ ul li{
     }
 }
 };
+
+/* Scrollbar para navegadores basados en WebKit (Chrome, Safari, Edge) */
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 5rem;  /* Grosor de la barra vertical */
+    height: 5rem; /* Grosor de la barra horizontal */
+}
+  
+/* Estilos para el fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;  /* Color de fondo de la pista */
+}
+  
+  /* Estilos para la barra en sí (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #888;  /* Color de la barra */
+  border-radius: 10px;  /* Redondeado de la barra */
+  border: 3px solid #f1f1f1;  /* Borde para separar el thumbdel track */
+}
+  
+  /* Estilo de la barra cuando se pasa el cursor encima */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  /* Color de la barra al hacerhover */
+}
+  
+/* Scrollbar para Firefox */
+
+/* Grosor de la barra en Firefox */
+html {
+  scrollbar-width: thin;  /* Grosor de la barra (auto, thin onone) */
+  scrollbar-color: #888 #f1f1f1;  /* Color del thumb y deltrack */
+}
+
+/* Estilo cuando el mouse está encima de la barra en Firefox*/
+html:hover {
+  scrollbar-color: #555 #f1f1f1;  /* Color al hacer hover */
+}
+  
