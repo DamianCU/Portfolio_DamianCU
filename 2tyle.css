@@ -1,0 +1,670 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00ffee;
+    --titles-color: #48fb47;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+}
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 5;   
+}
+section{
+    min-height: 100vh;
+    padding: 5rem 5%;
+}
+span{
+    color: var(--main-color);
+}
+ul li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mainLogo{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.mainLogo:hover{
+    transform: scale(1.2);
+}
+.mainLogo span{
+    color: var(--main-color);
+    text-shadow: 0 0 30px var(--main-color);
+}
+
+.language-selector{
+    display: flex;
+    gap: 5px;
+    margin-right: 10px;
+
+}
+.language-selector button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+}
+.language-selector button img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.language-selector button:hover img{
+    transform: scale(1.1);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.language-selector button:active img{
+    transform: scale(0.95);
+}
+
+.navBar {
+    color: var(--main-color);
+    gap: 2rem;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+.navBar.active {
+    color: var(--main-color);
+    display: flex;
+    opacity: 1;
+    z-index: 100;
+    overflow: hidden;
+}
+.navBar.active a{
+    color: var(--text-color);
+    border-bottom: 3px solid transparent;
+}
+
+.navBar a:hover, .navBar a.active{
+    color: var(--main-color) !important;
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: block;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    /* gap: 15rem;  */  
+}
+    
+.home-content{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+.home-img{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.home-img img{
+    max-width: 100%;
+    /* width: 60vw; */
+    height: auto;    
+    border-radius: 50%;
+    top: 3rem;
+    box-shadow: 0 0 50px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;   
+}
+
+.home-text h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1.2;        
+}
+.text-animation{
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.8rem;
+      
+}
+    
+.home-text p{
+    font-size: 2rem;
+    margin: 30px;
+    font-weight: 700;
+    line-height: 1.8;
+    max-width: 100%;
+}
+
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
+.contact{
+    display: block;
+    padding: 20px;
+    margin-top: 10rem;
+    border: 3px dashed rgb(32, 32, 32);
+    box-shadow: var(--main-color);
+}
+.contact h2{
+    color: RGB(72, 251, 71);
+    font-size: 3rem;
+    margin-bottom: 1rem; 
+}
+.contact a{
+    color: var(---color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.skills{
+    margin-top: 15rem;
+    gap: 20px;
+    justify-content: center;
+}
+.skills h2{
+    color: RGB(72, 251, 71);
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+.skills ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.skills li{
+    width: 100px;
+    height: 100px;
+    color: var(--main-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+.skills i{
+    font-size: 8rem;
+}
+
+
+.formation{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 15%;
+}
+.formation-content{
+    gap: 2rem;
+    justify-content: center;
+}
+.formation-content h2{
+    color: RGB(72, 251, 71);    
+    font-size: 6rem;
+    margin-bottom: 6rem;
+    text-align: center;
+    width: 100%;   
+}
+.education, .courses{
+    background-color: #151514;
+    padding: 2rem;    
+    border-radius: 50px;
+    box-shadow: 0 0 15px var(--main-color);
+    margin-bottom: 6rem;
+}
+.education h3, .courses h2{
+    color: var(--titles-color);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.experience-content{
+    padding: 0 10% 0 10% ;
+}
+.course h3{
+    list-style-type: disc;
+    color: #f15d8e;
+    gap: 4rem; 
+    padding: 1rem;
+    
+}
+.course ul{
+    padding-left: 2rem;
+    
+}
+.course ul li{
+    margin-bottom: 0.8rem;
+    list-style-type: disc;
+}
+.bootcamp, course{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 238. 0.2);
+    margin-bottom: 1.5rem;
+}
+.bootcamp h4{
+    color: var(--titles-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.bootcamp p, .course ul{
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.course a{
+    color: var(--main-color);
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+}
+.course a:hover{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+
+.experience {
+    margin-top: 20rem;
+    display:flex;
+    justify-content: center;
+    padding: 2rem;
+
+}
+.experience-content{
+    max-width: 100%;
+}
+
+.experience-content h2 {
+    color: #ff66cc;
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.job {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: #1d0202;
+    border-radius: 10px;
+    box-shadow: 0 0 80px rgb(196, 8, 229)
+}
+
+.job h3 {
+    font-size: 3rem;
+    color: #00ffee;
+    margin-bottom: 1rem;
+}
+
+.job p {
+    font-size: 2rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+.projects{
+    margin-top: 30rem;
+    gap: 2rem;
+    padding: 5rem;
+    background-color: #151514;
+    /* border-radius: 10px */;
+    box-shadow: 0 0 150px rgba(5, 5, 240, 0.979);
+}
+.projects-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+}
+.projects-content h2{
+    color: var(--main-color);
+    font-size: 6rem;
+    margin-bottom: 6rem;
+}
+.project{
+    background-color: var(--second-bg-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    gap: 3rem;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 50px rgba(5, 5, 240, 0.979);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.project-img{
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project h3{
+    font-size: 3rem;
+    color: var(--titles-color);
+    margin-bottom: 0.5rem;
+}
+.project p{
+    font-size: 2rem;
+    color:#ccc;
+    line-height: 1.5;
+}
+
+
+/* Para pantallas de tablets (768px o más) */
+@media (min-width: 768px) {
+    header {
+        padding: 4rem 12%;
+    }
+
+    .mainLogo {
+        font-size: 3rem;
+    }
+    #menu-icon{
+        display: none;
+        left: 2px;
+    }
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+    }
+    .navBar a {
+        color: var(--text-color) !important;
+        margin-left: 2rem;
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .home-content {
+        flex-direction: column;
+
+    }
+
+    .home-img {
+        width: 50%;
+    }
+
+    .home-img img {
+        width: 30vw;
+    }
+
+    .home-content h1 {
+        font-size: 7rem;
+    }
+
+    .text-animation{        
+        width: 90%;
+        font-size: 3rem;
+        min-width: 200px;
+        display: inline-block;
+    }
+    .text-animation span{
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid var(--main-color);
+        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
+    }
+    .text-animation span::before{
+        width: 370.81px;
+        height: 90px;
+        content: "Web Developer";
+        color: var(--main-color);
+        animation: words 20s infinite;        
+    }
+    .text-animation span::after{
+        content: "";
+        background-color: var(--bg-color);
+        position: absolute;
+        width: 370.81px;
+        height: 90px;
+        border-left: 3px solid var(--bg-color);
+        right: -8px;
+        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    }
+    
+    .contact{
+        display: flex;
+        background-color: white;
+
+    }
+    .contact h2{
+        color: var(--text-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .experience-content h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .job h3 {
+        font-size: 1.8rem;
+    }
+
+    .job p {
+        font-size: 1.4rem;
+    }
+    .projects-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project{
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .project h3{
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .project p{
+        font-size: 1.4rem;
+        text-align: right;
+    }
+}
+
+@media (min-width:1024px) {
+    header{
+        padding: 3rem;
+        margin: 0;
+    }
+    .mainLogo{
+        width: 500px;
+        padding-left: 4rem;
+    }
+    .navBar{
+        width: 700px;
+        padding-right: none;
+    }
+    .home-img {
+        width: 40%;
+    }
+    .home-img img{
+        max-width: 25vw;
+    }
+    .project{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .projects-content{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .mainLogo{
+        width: 65%;
+        padding-left: 3rem;
+    }
+    .navBar{
+        margin-right: 3rem;
+    }
+    .home-content{        
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;    
+    }
+    .home-img{
+        flex: 1;
+        max-width: 45%;
+    }
+    .home-text{
+        flex: 1;
+        max-width: 55%;
+        text-align: left;
+        padding-left: 8rem;
+    }
+    .home-text h1{
+        font-size: 10rem;
+        display: flexbox;
+        justify-content: center;
+        
+    }
+    .text-animation{
+        width: 700px;
+        height: 100px;
+        font-size: 3.5rem;
+    }
+    .text-animation span{
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid var(--main-color);
+        animation: typing 4s steps(30) infinite, cursor 0.6s infinite;
+    }
+    .text-animation span::before{
+        width: 370.81px;
+        height: 90px;
+        content: "Web Developer";
+        color: var(--main-color);
+        animation: words 20s infinite;        
+    }
+    .text-animation span::after{
+        content: "";
+        background-color: var(--bg-color);
+        position: absolute;
+        width: 370.81px;
+        height: 90px;
+        border-left: 3px solid var(--bg-color);
+        right: -8px;
+        animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    
+    .skills h2{
+        font-size: 5rem;
+    }
+    .skills li {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+@keyframes words{
+    0%,
+    25%{
+        content: "Frontend Developer";
+    }
+    26%,
+    50%{
+        content: "Backend Developer in progress";
+    }
+    51%,
+    75%{
+        content: "3D Artist";
+    }
+    76%,
+    100%{
+        content: "Video Games Developer in Progress";
+    }
+}
+
+@keyframes cursor{
+    0%{
+        border-color: transparent;
+    }
+    50%{
+        border-color: var(--main-color);
+    }
+    100%{
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
