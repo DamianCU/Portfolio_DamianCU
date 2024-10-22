@@ -1,3 +1,28 @@
+// Función para cambiar el idioma del portfolio
+function setLanguage(lang){
+    const buttons= document.querySelectorAll('.language-selector button');
+
+    //Eliminar la clase 'active de todos los botones
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Añadir la clase 'active' al botón clicado
+    const activeButton = document.querySelector(`.language-selector button[lang="${lang}"]`);
+    if(activeButton){
+        activeButton.classList.add('active');
+    };
+};
+
+// Cambiar el idioma al clicar en uno de los botones
+document.querySelectorAll('.language-selector button').forEach(button => {
+    button.addEventListener('click', function () {
+        const lang = this.getAttribute('lang');
+        setLanguage(lang);
+    });
+});
+
+
 // Función para mostrar/ocultar el menú desplegable al hacer clic en el icono del menú
 function toggleMenu() {
     const navBar = document.querySelector('.navBar');
@@ -29,7 +54,7 @@ navLinks.forEach(link => {
 
 
 
-/* Animación chula del h3 del home */
+/* Animación molona del h3 del home */
 const words = ["Frontend Developer", "Backend Developer in progress", "3D Artist", "Video Games Developer in Progress"];
 let wordIndex = 0;
 let charIndex = 0;

@@ -54,16 +54,13 @@ ul li{
 }
 
 .mainLogo{
-    font-size: 2rem;
+    width: 75%;
+    font-size: 3rem;
     color: var(--text-color);
-    font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.mainLogo:hover{
-    transform: scale(1.2);
-}
 .mainLogo span{
     color: var(--main-color);
     text-shadow: 0 0 30px var(--main-color);
@@ -71,39 +68,35 @@ ul li{
 
 .language-selector{
     display: flex;
-    gap: 5px;
-    margin-right: 10px;
-
+    gap: 1rem;
+    margin-right: 1.5rem;
 }
+
 .language-selector button{
     background-color: transparent;
-    border: none;
-    outline: none;
     cursor: pointer;
     transition: 0.3s ease, box-shadow 0.3s ease;
 }
 .language-selector button img{
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
+    filter: grayscale(90%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.language-selector button.active img{
+    filter: none;
 }
 .language-selector button:hover img{
     transform: scale(1.1);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5rem var(--main-color);
 }
 .language-selector button:active img{
-    transform: scale(0.95);
+    transform: scale(1);
 }
 
 .navBar {
-    color: var(--main-color);
-    gap: 2rem;
-    top: 100%;
-    left: 0;
-    z-index: 10;
-    align-items: center;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 .navBar.active {
     color: var(--main-color);
@@ -419,9 +412,13 @@ ul li{
     header {
         padding: 4rem 12%;
     }
-
+    
     .mainLogo {
         font-size: 3rem;
+        
+    }
+    .mainLogo:hover{
+        transform: translateX(2%);
     }
     #menu-icon{
         display: none;

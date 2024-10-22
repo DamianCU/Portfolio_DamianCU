@@ -6,21 +6,27 @@
     <title>2o Intento</title>
 
     <link rel="icon" href="./images/ficon1_bg_removed.png">
-    <link rel="stylesheet" href="../Portfolio_DamianCU/2tyle.css">
+    <link rel="stylesheet" href="./2tyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet" >
 </head>
 <body>
     <header>
-        <a href="#name" class="mainLogo">Damián<span> Carrillo</span></a>
-
-        <!-- Botones para seleccionar la lengua de la página -->
-
+        <a href="#name" class="mainLogo"><strong>Damián <span> Carrillo</span></strong></a>
+        
+        <div class="language-selector">
+            <button lang="es" class="active">
+                <img src="./images/langEspañol.JPG" alt="Español">
+            </button>
+            <button lang="en">
+                <img src="./images/englishFlag.JPG" alt="English">
+            </button>
+        </div>
 
         <div id="menu-icon">
             &#9776;
         </div>
+        <nav class="navBar" style="display: none;">
 
-        <nav class="navBar">
             <a href="#home" class="lang es">Inicio</a>
             <a href="#home" class="lang en" style="display:none">Home</a>
 
@@ -36,10 +42,7 @@
             <a href="#aboutMe" class="lang es">Sobre mí</a>
             <a href="#aboutMe" class="lang en" style="display:none">About me</a>
         </nav>
-        <div class="language-selector">
-            <button onclick="setLanguage('es')"><img src="./images/langEspañol.JPG" alt="Español"></button>
-            <button onclick="setLanguage('en')"><img src="./images/englishFlag.JPG" alt="English"></button>
-        </div>
+        
     </header>
 
     <section class="home" id="home">
@@ -51,6 +54,7 @@
                 <div class="lang es">
                     <h1>Hola, soy <span>Damián</span></h1>
                     <h3 class="text-animation">Soy <span></span></h3>
+                    <h3 class="lang en text-animation">I'm</h3>
                     <p>"Apasionado por la creación de experiencias web, desarrollo de videojuegos y aplicaciones innovadoras, me esfuerzo por combinar estética y funcionalidad en cada proyecto, buscando siempre mejorar la interacción del usuario y superar expectativas."</p>
                 </div>
                 <div class="lang en" style="display:none;">
