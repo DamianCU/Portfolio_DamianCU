@@ -252,7 +252,7 @@ ul li{
 .skills li{
     width: 30%;
     max-width: 150px;
-    height: 150px;
+    height: auto;
     color: var(--main-color);
     padding: 1rem;
     border-radius: 5px;
@@ -262,22 +262,15 @@ ul li{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.tooltip{
-    
-    font-size: 5rem;
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding:  1rem;
-    border-radius: 20%;
-    font-size: 0.8rem;
-    z-index: 10;
-    white-space: nowrap;
+    text-align: center;
 }
 .skills i{
     font-size: 8rem;
+    margin-bottom: 1rem;
+}
+.skills li span{
+    font-size: 1.4rem;
+    color: var(--hover-color);
 }
 
 .formation{
