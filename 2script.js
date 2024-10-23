@@ -5,14 +5,15 @@ let words = wordsEs; // Por defecto, en español
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingElement = document.querySelector('.text-animation span');
 const typingSpeed = 80; // Velocidad de escribir
 const deletingSpeed = 40; // Velocidad de borrar
 const delayBetweenWords = 1500; // Pausa entre palabras
 
-// Función de animación
+// Función de animación de palabras
 function typeWords() {
+    const typingElement = document.querySelector('.text-animation span');
     const currentWord = words[wordIndex];
+
     if (isDeleting) {
         charIndex--;
         typingElement.textContent = currentWord.substring(0, charIndex);
@@ -60,29 +61,17 @@ function setLanguage(lang) {
         }
     });
 
-    // Reiniciar la animación de palabras al cambiar el idioma
-    if (lang === 'es') {
-        words = wordsEs; // Cambiar a las palabras en español
-    } else if (lang === 'en') {
-        words = wordsEn; // Cambiar a las palabras en inglés
-    }
-    
-    // Reiniciar índices de la animación y reiniciar la animación
+    // Actualizar las palabras y reiniciar la animación de escritura
+    words = lang === 'es' ? wordsEs : wordsEn;
+
+    // Reiniciar la animación de palabras
     wordIndex = 0;
     charIndex = 0;
     isDeleting = false;
+    const typingElement = document.querySelector('.text-animation span');
     typingElement.textContent = ''; // Limpiar el contenido del span
     typeWords(); // Reiniciar la animación
 }
-
-// Cambiar el idioma al clicar en uno de los botones
-document.querySelectorAll('.language-selector button').forEach(button => {
-    button.addEventListener('click', function () {
-        const lang = this.getAttribute('lang'); // Obtener el idioma del botón
-        setLanguage(lang); // Llamar a la función para cambiar el idioma
-    });
-});
-
 
 // Función para mostrar/ocultar el menú desplegable al hacer clic en el icono del menú
 function toggleMenu() {
@@ -110,5 +99,15 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Iniciar la animación de escritura al cargar la página
-typeWords();
+// Iniciar la animación de escritura y manejo de idioma al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    typeWords(); // Iniciar la animación de palabras
+
+    // Configurar la alternancia de idioma al cargar la página
+    document.querySelectorAll('.language-selector button').forEach(button => {
+        button.addEventListener('click', function () {
+            const lang = this.getAttribute('lang'); // Obtener el idioma del botón
+            setLanguage(lang); // Cambiar idioma
+        });
+    });
+});
