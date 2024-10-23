@@ -211,7 +211,7 @@ ul li{
     margin: 1rem auto;
 }
 .contact h2{
-    color: var(--hover-color);
+    color: var(--titles-color);
     font-size: 3rem;
     margin-bottom: 1rem;
     border-radius: 3rem;
@@ -288,6 +288,7 @@ ul li{
 .formation-content h2{
     color: RGB(72, 251, 71);    
     font-size: 6rem;
+    border-bottom: 0.4rem solid var(--hover-color);
     margin-bottom: 6rem;
     text-align: center;
     justify-content: center;
@@ -297,14 +298,25 @@ ul li{
     background-color: #010123;
     padding: 2rem;    
     border-radius: 4rem;
-    box-shadow: 0 0 3rem var(--main-color);
+    box-shadow: 0 0 3.5rem var(--main-color);
     margin-bottom: 6rem;
 }
-.education h3, .courses h2{
+/* .education h3, .courses h2{
     color: var(--titles-color);
     font-size: 3rem;
     margin-bottom: 1rem;
-}
+} */
+ .education, .courses{
+    background-color: #010123;
+    padding: 2rem;
+    border-radius: 4rem;
+    margin-bottom: 6rem;
+ }
+ .bootcamp h4, .courses h2, .education h3{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--titles-color);
+ }
 
 .course h3{
     list-style-type: disc;
@@ -313,7 +325,7 @@ ul li{
     padding: 1rem;
 }
 .course ul{
-    padding-left: 2rem;
+    padding-left: 5rem;
 }
 .course ul li{
     margin-bottom: 0.8rem;
@@ -324,8 +336,8 @@ ul li{
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 255, 238. 0.2);
-    margin-bottom: 1.5rem;
-}
+    margin-bottom: 1.5rem; }*
+
 .bootcamp h4{
     color: var(--titles-color);
     font-size: 3rem;
