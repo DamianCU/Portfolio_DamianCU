@@ -15,20 +15,21 @@
     --text-color: white;
     --main-color: #00ffee;
     --titles-color: #48fb47;
+    --hover-color: #ff66cc;
 }
 html{
     font-size: 62.5%;
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
-
-body{
-    padding-top: 15rem;
+body {
     font-size: 1.6rem;
     line-height: 1.5;
     background-color: var(--bg-color); 
     color: var(--text-color);
     overflow-y: auto;
-    
+    padding-top: 15rem;    
 }
 header{
     position: fixed;
@@ -37,17 +38,24 @@ header{
     width: 100%;
     padding: 1rem 5%;
     padding-bottom: 2rem;
-    background: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    z-index: 5;   
+    z-index: 100;   
 }
 section{
     min-height: 100vh;
     padding: 5rem 5%;
-    margin-top: 5rem;
+    scroll-margin-top: 15rem;
+}
+h2{
+    font-size: 6rem;
+    color: var(--titles-color);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 span{
     color: var(--main-color);
@@ -96,9 +104,6 @@ ul li{
     transform: scale(1.1);
     box-shadow: 0 0 5rem var(--main-color);
 }
-.language-selector button:active img{
-    transform: scale(1);
-}
 
 #menu-icon{
     font-size: 3rem;
@@ -114,16 +119,17 @@ ul li{
     border-radius: 10%;
     box-shadow: 0 1rem 2rem var(--main-color);
     z-index: 10;
-    padding: 1rem;  
-
+    padding: 1rem;
 }
 .navBar.active {
     display: flex;
+    transition: all 0.5s ease;
 }
 .navBar a{
     text-decoration: none;
     padding: 0.5rem 1rem;
     color: var(--text-color);
+    animation: neon-glow 1.5s infinite alternate;
 }
 .navBar.active a{
     color: var(--text-color);
@@ -135,16 +141,13 @@ ul li{
     border-bottom: 0.4rem solid var(--main-color);
 }
 
-
 .home{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    /* gap: 15rem;  */  
-}
-    
+}    
 .home-content{    
     display: flex;
     flex-direction: column;
@@ -160,7 +163,6 @@ ul li{
  
 .home-img img{
     max-width: 100%;
-    /* width: 60vw; */
     height: auto;    
     border-radius: 50%;
     top: 3rem;
@@ -171,7 +173,6 @@ ul li{
 
 .home-text h1{
     font-size: 4rem;
-    font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1.2;        
 }
@@ -187,7 +188,7 @@ ul li{
 .home-text p{
     font-size: 2rem;
     margin: 30px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.8;
     max-width: 100%;
 }
@@ -200,15 +201,21 @@ ul li{
 
 .contact{
     display: block;
-    padding: 2rem;    
-    margin-top: 10rem;
+    padding: 3rem;
+    background-color: var(--bg-color);
+    color: var(--main-color);    
+    font-size: 2rem;
+    text-align: center;
     border: 3px dashed rgb(32, 32, 32);
-    box-shadow: var(--main-color);
+    box-shadow: 0 0 5rem var(--main-color);
+    margin: 1rem auto;
 }
 .contact h2{
-    color: RGB(72, 251, 71);
+    color: var(--hover-color);
     font-size: 3rem;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    border-radius: 3rem;
+    animation: neon-glow 1.5s infinite alternate;
 }
 .contact a{
     color: var(---color);
@@ -224,10 +231,8 @@ ul li{
     align-items: center;
 }
 .skills h2{
-    text-align: center;
-    color: RGB(72, 251, 71);
-    font-size: 6rem;
-    margin-bottom: 0.5rem;
+    border-bottom: 0.5rem solid var(--hover-color);
+    
 }
 .skills h3{
     text-align: center;
@@ -238,7 +243,6 @@ ul li{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
 }
 .mainSkills, .secondarySkills{
     width: 100%;
@@ -261,7 +265,7 @@ ul li{
 }
 
 .tooltip{
-    display: none;
+    
     font-size: 5rem;
     position: absolute;
     background-color: #333;
@@ -356,7 +360,7 @@ ul li{
 
 
 .experience {
-    margin-top: 20rem;
+    margin-top: 10rem;
     display:flex;
     justify-content: center;
     padding: 2rem;    
@@ -456,7 +460,7 @@ ul li{
 /* Para pantallas de tablets (768px o más) */
 @media (min-width: 768px) {
     header {
-        padding: 4rem 12%;
+        padding: 2rem 5%;
     }
     
     .mainLogo {
@@ -470,16 +474,9 @@ ul li{
         width: 10%;
     }
     #menu-icon{ 
-        font-size: 6rem;       
+        font-size: 4rem;       
         width: 7rem;
         align-items: center;
-    }
-    .navBar {
-        display: none;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        padding: 0;
     }
     
     .navBar {
@@ -491,7 +488,7 @@ ul li{
         border-radius: 5rem;
         box-shadow: 0 1rem 5rem var(--main-color);
         z-index: 10;
-        padding: 1rem;
+        transition: background-color 0.3s ease;
     }
     .navBar a {
         color: var(--bg-color) !important;
@@ -501,7 +498,18 @@ ul li{
         padding: 0.5rem;
         margin-left: 2rem;
         font-size: 1.8rem;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        position: relative;
+        animation: neon-glow 1.5s infinite alternate;
+    }
+    .navBar a:hover {
+        color: var(--titles-color);
+        border-radius: 5rem;
+        background-color: var(--main-color);
+        box-shadow: 0 0 2rem 1rem rgb(255, 20, 147, 0.8),
+                    0 0 3rem 2rem rgb(255, 20, 147, 0.6);
+        border-bottom: 0.4rem solid rgba(237, 75, 208, 0.8);
+        transform: scale(1.1);
     }
 
     .home-content {
@@ -538,8 +546,11 @@ ul li{
     }
     
     .contact{
-        display: flex;
-        background-color: white;
+        /* display: flex;
+        background-color: white; */
+        font-size: 2rem;
+        padding: 1.5rem;
+        max-width: 80%;
 
     }
     .contact h2{
@@ -585,18 +596,48 @@ ul li{
         margin: 0;
     }
     .mainLogo{
-        width: 90%;
-        padding-left: 4rem;
+        width: 100%;
+        justify-content: left;
+        padding-left: 1rem;
     }
-    .navBar{
-        width: 700px;
-        padding-right: none;
+    .language-selector{
+        width: 10%;
+    }
+    #menu-icon {
+        display: none;
+    }
+    .navBar a {
+        display: flex;
+        color: var(--bg-color) !important;
+        background-color: var(--main-color);
+        border-radius: 1rem;
+        justify-content: center;
+        padding: 0.5rem;
+        margin-left: 2rem;
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+        position: relative;
+        animation: neon-glow 1.5s infinite alternate;
+    }
+    .navBar a:hover {
+        color: var(--titles-color);
+        border-radius: 5rem;
+        background-color: var(--main-color);
+        box-shadow: 0 0 2rem 1rem rgb(255, 20, 147, 0.8),
+                    0 0 3rem 2rem rgb(255, 20, 147, 0.6);
+        border-bottom: 0.4rem solid rgba(237, 75, 208, 0.8);
+        transform: scale(1.1);
     }
     .home-img {
         width: 40%;
     }
     .home-img img{
         max-width: 25vw;
+    }
+    .contact{
+        font-size: 2rem;
+        padding: 1.5rem;
+        max-width: 80%;
     }
     .project{
         max-width: 80%;
@@ -662,7 +703,19 @@ ul li{
         border-left: 3px solid var(--bg-color);
         right: -8px;
         animation: cursor 0.6s infinite;
-    
+    }
+    .contact{
+        font-size: 2.4rem;
+        width: 100%;
+        min-width: 500px;
+        padding: 2rem;
+        margin-top: 30rem;
+    }
+    .contact h2{
+        color: #f15d8e;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }    
     .skills h2{
         font-size: 5rem;
     }
@@ -711,7 +764,18 @@ ul li{
         width: 100%;
     }
 }
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 1rem 0 rgba(255, 20, 147, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 5rem 0 rgba(255, 20, 147, 1);
+    }
+    100% {
+        box-shadow: 0 0 1rem 0 rgba(255, 20 , 147, 0.7);
+    }
 };
+
 
 /* Scrollbar para navegadores basados en WebKit (Chrome, Safari, Edge) */
 

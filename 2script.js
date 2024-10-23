@@ -6,7 +6,7 @@ let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const typingElement = document.querySelector('.text-animation span');
-const typingSpeed = 60; // Velocidad de escribir
+const typingSpeed = 80; // Velocidad de escribir
 const deletingSpeed = 40; // Velocidad de borrar
 const delayBetweenWords = 1500; // Pausa entre palabras
 
@@ -112,6 +112,7 @@ document.addEventListener('click', function(event) {
 
 // Iniciar la animación de escritura al cargar la página
 typeWords();
+
 
 
 const skills = document.querySelectorAll('.skills li');
