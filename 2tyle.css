@@ -22,7 +22,12 @@ html{
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
+}  
+  /* Estilo cuando el mouse está encima de la barra en Firefox*/
+html:hover {
+    scrollbar-color: #555 #f1f1f1;  /* Color al hacer hover */
 }
+    
 body {
     font-size: 1.6rem;
     line-height: 1.5;
@@ -436,6 +441,27 @@ ul li{
     font-size: 2.5rem;
     color:#ccc;
 }
+.footer {
+    background-color: #2f2f2f;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin-top: 5rem;
+}
+
+.footer-content h3 {
+    color: var(--titles-color);
+    font-size: 2rem;
+}
+
+.footer-content p {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin: 1rem;
+    margin-bottom: 20px;
+}
+
 
 ::-webkit-scrollbar{
     width: 3rem;
@@ -774,16 +800,4 @@ ul li{
   background-color: #555;  /* Color de la barra al hacerhover */
 }
   
-/* Scrollbar para Firefox */
 
-/* Grosor de la barra en Firefox */
-html {
-  scrollbar-width: thin;  /* Grosor de la barra (auto, thin onone) */
-  scrollbar-color: #888 #f1f1f1;  /* Color del thumb y deltrack */
-}
-
-/* Estilo cuando el mouse está encima de la barra en Firefox*/
-html:hover {
-  scrollbar-color: #555 #f1f1f1;  /* Color al hacer hover */
-}
-  
