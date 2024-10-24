@@ -21,11 +21,11 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
+    scrollbar-color: var(--main-color) #f1f1f1;
 }  
   /* Estilo cuando el mouse está encima de la barra en Firefox*/
 html:hover {
-    scrollbar-color: #555 #f1f1f1;  /* Color al hacer hover */
+    scrollbar-color: var(--main-color) #f1f1f1;  /* Color al hacer hover */
 }
     
 body {
@@ -83,7 +83,7 @@ ul li{
     align-items: left;
     justify-content: left;    
     text-decoration: none;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 .mainLogo:hover{
     transform: translateX(2%);
@@ -120,65 +120,72 @@ ul li{
     box-shadow: 0 0 5rem var(--main-color);
 }
 
-#menu-icon{
+.menu-icon {
     font-size: 3.5rem;
     color: var(--main-color);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
+    margin-left: auto; /* Empujar hacia la derecha */
+    transition: all 0.3s ease;
 }
- 
-#menu-icon:hover {
-    transform: scale(1.8);
+
+.menu-icon:hover {
+    transform: rotate(0.5turn);    
 }
 
 .navBar {
-    display: none;
-    width: 100%;
+    display: none; /* Ocultar inicialmente */
+    width: 15rem; 
     flex-direction: column;
     position: absolute;
+    margin-top: 0.5rem;
     top: 6rem;
-    background-color: rgb(15, 1, 28);
-    border-radius: 5%;
-    box-shadow: 0 1rem 2rem var(--main-color);
-    transition: all 0.5s ease;
-};
+    right: 0.3%; 
+    background-color: var(--bg-color);
+    border-radius: 0 0 10px ; /* Esquinas más redondeadas */
+    box-shadow: 1px 0px 2px 2px var(--titles-color);
+    padding: 1rem; 
+    /* transition: all 0.3s ease; */
+}
 
 .navBar.active {
-    display: flex;
-    padding: 0.2rem;
+    display: flex; /* Mostrar cuando está activo */
 }
 
 .navBar a {
     display: flex;
-    max-width: 100px;
-    padding: 0.5rem 1rem;
-    color: var(--bg-color) !important;
-    background-color: var(--main-color);
-    border-radius: 1rem;
-    justify-content: center;
-    margin-left: 2rem;
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    padding: 1rem; /* Mayor padding para un mejor diseño */
+    color: var(--main-color) !important;
+    justify-content: flex-start; /* Justificar a la izquierda */
+    font-size: 1.6rem; /* Aumentar el tamaño de fuente */
     position: relative;
-    animation: neon-glow 1.5s infinite alternate;
+    transition: all 0.3s ease;
 }
 
-.navBar a.active, .navBar a:hover {
+.navBar a:hover {
     color: var(--hover-color);
-    border-bottom: 0.4rem solid var(--main-color);
-    border-radius: 5rem;
-    box-shadow: 0 0 2rem 1rem rgba(255, 20, 147, 0.8),
-                0 0 3rem 2rem rgba(255, 20, 147, 0.6);
-    transform: scale(1.1);
+    transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
 }
 
-.navBar a.active {
-    border-bottom: 3px solid transparent;
-    color: var(--text-color); /* Mismo color en active y hover */
+.navBar a::after {
+    content: "";
+    color: var(--hover-color);
+    display: block;
+    height: 1.5px; /* Altura de la barra de subtítulo */
+    width: 100%; /* 100% del ancho del enlace */
+    background: var(--hover-color);
+    position: absolute;
+    bottom: 0; /* Colocar en la parte inferior del enlace */
+    left: 0;
+    transform: scaleX(0); /* Inicialmente no visible */
+    transition: transform 0.3s ease; /* Transición suave */
 }
+
+.navBar a:hover::after {
+    /* transform: scaleX(1); */ /* Hacer visible la barra al pasar el mouse */
+    transition-property: initial;
+}
+
 
 .home{
     display: flex;
@@ -254,7 +261,7 @@ ul li{
 .contact h2{
     color: var(--titles-color);
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     border-radius: 3rem;
     animation: neon-glow 1.5s infinite alternate;
 }

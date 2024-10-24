@@ -19,7 +19,7 @@ const typingSpeed = 80; // Velocidad de escritura
 const deletingSpeed = 50; // velocidad de borrado
 const delayBetweenWords = 1500; // Pausa entre palabras
 
-// Function for the typing animation
+// Funcion para typing 
 function typeWords() {
     const typingElement = document.querySelector('.text-animation span');
     const currentWord = words[wordIndex];
@@ -86,28 +86,37 @@ function setLanguage(lang) {
 // Function to show/hide the dropdown menu when clicking the menu icon
 function toggleMenu() {
     const navBar = document.querySelector('.navBar');
-    navBar.classList.toggle('active'); // Show/Hide the 'active' class of navBar
+    if (navBar) {
+        navBar.classList.toggle('active'); // Show/Hide the 'active' class of navBar
+    }
 }
-
-// Click event to toggle the menu
+// Function to hide the menu
+function hideMenu() {
+    const navBar = document.querySelector('.navBar');
+    if (navBar) {
+        navBar.classList.remove('active'); // Hide the menu
+    }
+}
+// Ensure the menu icon exists before adding event listeners
 const menuIcon = document.getElementById('menu-icon');
-menuIcon.addEventListener('click', toggleMenu);
+if (menuIcon) {
+    menuIcon.addEventListener('click', toggleMenu);
+}
 
 // Hide the menu when clicking a link within the menu
 const navLinks = document.querySelectorAll('.navBar a');
 navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        document.querySelector('.navBar').classList.remove('active'); // Hide the menu
-    });
+    link.addEventListener('click', hideMenu); // Use hideMenu function
 });
 
 // Hide the menu when clicking outside
 document.addEventListener('click', function(event) {
     const navBar = document.querySelector('.navBar');
-    if (!navBar.contains(event.target) && !menuIcon.contains(event.target)) {
-        navBar.classList.remove('active'); // Hide the menu if not in navBar or menu
+    if (navBar && navBar.classList.contains('active') && !navBar.contains(event.target) && !menuIcon.contains(event.target)) {
+        hideMenu(); // Hide the menu if not in navBar or menu
     }
 });
+
 
 
 
