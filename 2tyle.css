@@ -33,11 +33,14 @@ body {
     line-height: 1.5;
     background-color: var(--bg-color); 
     color: var(--text-color);
-    overflow-y: auto;
+    /* overflow-y: fixed; */
+    overflow-y: hidden;
     padding-top: 15rem;    
 }
 header{
+    display: flex;
     position: fixed;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -46,9 +49,7 @@ header{
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-end;   
     z-index: 100;   
 }
 section{
@@ -72,24 +73,33 @@ ul li{
 }
 
 .mainLogo{
-    width: 75%;
+    width: 80%;
     font-size: 3rem;
-    color: var(--text-color);
+    color: whitesmoke;
+    text-shadow: 0 0 50px var(--main-color);
     cursor: pointer;
     transition: 0.3s ease;
+    display: flex;
+    align-items: left;
+    justify-content: left;    
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
-
+.mainLogo:hover{
+    transform: translateX(2%);
+}
 .mainLogo span{
     color: var(--main-color);
-    text-shadow: 0 0 30px var(--main-color);
+    text-shadow: 0 0 40px var(--main-color);
 }
 
 .language-selector{
     display: flex;
+    align-items: center;
     gap: 1rem;
+    justify-content: center;
     margin-right: 1.5rem;
 }
-
 .language-selector button{
     background-color: transparent;
     cursor: pointer;
@@ -111,39 +121,63 @@ ul li{
 }
 
 #menu-icon{
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--main-color);
     cursor: pointer;
-}
-.navBar {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    background-color: rgb(15, 1, 28);
-    border-radius: 10%;
-    box-shadow: 0 1rem 2rem var(--main-color);
-    z-index: 10;
-    padding: 1rem;
-}
-.navBar.active {
     display: flex;
-    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
 }
-.navBar a{
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    color: var(--text-color);
-    animation: neon-glow 1.5s infinite alternate;
-}
-.navBar.active a{
-    color: var(--text-color);
-    border-bottom: 3px solid transparent;
+ 
+#menu-icon:hover {
+    transform: scale(1.8);
 }
 
-.navBar a:hover, .navBar a.active{
+.navBar {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 6rem;
+    background-color: rgb(15, 1, 28);
+    border-radius: 5%;
+    box-shadow: 0 1rem 2rem var(--main-color);
+    transition: all 0.5s ease;
+};
+
+.navBar.active {
+    display: flex;
+    padding: 0.2rem;
+}
+
+.navBar a {
+    display: flex;
+    max-width: 100px;
+    padding: 0.5rem 1rem;
+    color: var(--bg-color) !important;
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    justify-content: center;
+    margin-left: 2rem;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+.navBar a.active, .navBar a:hover {
     color: var(--hover-color);
     border-bottom: 0.4rem solid var(--main-color);
+    border-radius: 5rem;
+    box-shadow: 0 0 2rem 1rem rgba(255, 20, 147, 0.8),
+                0 0 3rem 2rem rgba(255, 20, 147, 0.6);
+    transform: scale(1.1);
+}
+
+.navBar a.active {
+    border-bottom: 3px solid transparent;
+    color: var(--text-color); /* Mismo color en active y hover */
 }
 
 .home{
@@ -398,7 +432,6 @@ ul li{
     gap: 2rem;
     padding: 5rem;
     background-color: #151514;
-    /* border-radius: 10px */;
     box-shadow: 0 0 150px rgba(34, 34, 250, 0.979);
 }
 .projects-content{

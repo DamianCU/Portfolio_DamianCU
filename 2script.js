@@ -16,7 +16,7 @@ let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const typingSpeed = 80; // Velocidad de escritura
-const deletingSpeed = 40; // velocidad de borrado
+const deletingSpeed = 50; // velocidad de borrado
 const delayBetweenWords = 1500; // Pausa entre palabras
 
 // Function for the typing animation
@@ -108,6 +108,8 @@ document.addEventListener('click', function(event) {
         navBar.classList.remove('active'); // Hide the menu if not in navBar or menu
     }
 });
+
+
 
 // Start the typing animation and language handling on page load
 document.addEventListener('DOMContentLoaded', function() {
