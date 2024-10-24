@@ -190,7 +190,7 @@ ul li{
 .home{
     display: flex;
     flex-direction: column;
-    margin-top: -5rem;
+    margin-top: -8rem;
     align-items: center;
     justify-content: center;
 }    
@@ -202,6 +202,7 @@ ul li{
     gap: 2rem;
 }
 .home-img{
+
     width: 80%;
     display: flex;
     justify-content: center;
@@ -549,7 +550,19 @@ ul li{
 /* Para pantallas de tablets (768px o más) */
 @media (min-width: 768px) {
     header {
-        padding: 2rem 5%;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 5%;
+        padding-bottom: 2rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        justify-content: flex-end;   
+        z-index: 100;
     }    
     .mainLogo {
         font-size: 4rem;
