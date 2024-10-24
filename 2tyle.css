@@ -190,7 +190,7 @@ ul li{
 .home{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    margin-top: -5rem;
     align-items: center;
     justify-content: center;
 }    
@@ -234,10 +234,10 @@ ul li{
 .home-text p{
     font-size: 2rem;
     margin: 30px;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.8;
     max-width: 100%;
-    margin-bottom: 15rem;
+    margin-bottom: 25rem;
 }
 
 .home-img img:hover{
@@ -251,8 +251,9 @@ ul li{
     padding: 3rem;
     background-color: var(--bg-color);
     color: var(--main-color);    
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
+    line-height: 5rem;
     border: 3px dashed rgb(32, 32, 32);
     border-radius: 1rem;
     box-shadow: 0 0 5rem var(--main-color);
@@ -260,32 +261,39 @@ ul li{
 }
 .contact h2{
     color: var(--titles-color);
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 3rem;
     border-radius: 3rem;
     animation: neon-glow 1.5s infinite alternate;
 }
+.contact li{
+    font-weight: 700;
+    
+}
 .contact a{
+    font-weight: 700;
     color: var(---color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .skills{
-    margin-top: 15rem;
+    margin-top: -10rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    margin-bottom: 10rem;
 }
 .skills h2{
     border-bottom: 0.5rem solid var(--hover-color);
+    margin-bottom: 5rem;
     
 }
 .skills h3{
     text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .skills ul{
     display: flex;
@@ -298,11 +306,11 @@ ul li{
     padding: 3rem;
 }
 .skills li{
-    width: 30%;
+    width: 40%;
     max-width: 150px;
     height: auto;
     color: var(--main-color);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 5px;
     font-size: 1.6rem;
     margin: 10px;
@@ -325,6 +333,7 @@ ul li{
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    padding-top: 10rem;
     margin: 5%;
     overflow-x: hidden;
 }
@@ -361,9 +370,10 @@ ul li{
     margin-bottom: 1rem;
     color: var(--main-color);
 }
-.bootcamp p, .course ul{
+.bootcamp p, .course ul, .course p{
     color: var(--text-color);
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: 550;
     line-height: 1.6;
 }
 .education h3 span{
@@ -394,8 +404,13 @@ ul li{
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 1rem;
 }
+.course p{
+    margin-left: 3.5rem;
+}
+
+
 .experience {
-    margin-top: 10rem;
+    margin-top: -5rem;
     display:flex;
     justify-content: center;
     padding: 2rem;    
@@ -588,8 +603,6 @@ ul li{
         border-right: 2px solid var(--main-color);
     }    
     .contact{
-        /* display: flex;
-        background-color: white; */
         font-size: 2rem;
         padding: 1.5rem;
         max-width: 80%;
