@@ -515,8 +515,8 @@ ul li{
 }
 /* Estilo de las imágenes de proyecto */
 .project-img {
-    width: 10rem;
-    max-width: 60%;
+    width: 70rem;
+    max-width: 100%;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -539,18 +539,16 @@ ul li{
 }
 
 .image-container {
-    max-width: 90%;
-    max-height: 60rem;
+    max-width: 40rem;
+    max-height: 30rem;
     overflow: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    cursor: zoom-in;
 }
 
 .modal-content {
-    width: 50rem;
+    width: 70rem;
     transition: transform 0.3s ease; /* Suavidad en el zoom */
 }
 .image-container:hover .modal-content {
@@ -558,9 +556,9 @@ ul li{
 }
 .close {
     position: absolute;
-    top: 10rem;
+    top: 15rem;
     right: 20rem;
-    font-size: 35px;
+    font-size: 4rem;
     color: #fff;
     cursor: pointer;
 }
@@ -625,75 +623,32 @@ ul li{
     }    
     .navBar {
         display: none;
-        width: 15rem; 
-        flex-direction: column;
-        position: absolute;
-        margin-top: 0.5rem;
-        top: 6rem;
-        right: 0.3%; 
-        background-color: var(--bg-color);
-        border-radius: 0 0 10px ;
-        box-shadow: 1px 0px 2px 2px var(--titles-color);
-        padding: 1rem;   
-    }    
+    }   
     .navBar.active {
         display: flex; /* Mostrar cuando está activo */
-    }
-    
-    .navBar a {
-        display: flex;
-        width: 100%; /* Ocupa el 100% del ancho del contenedor */
-        padding: 1rem; /* Mayor padding para un mejor diseño */
-        color: var(--main-color) !important;
-        justify-content: flex-start; /* Justificar a la izquierda */
-        font-size: 1.6rem; /* Aumentar el tamaño de fuente */
-        position: relative;
-        transition: all 0.3s ease;
     }
     
     .navBar a:hover {
         color: var(--hover-color);
         transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
     }
-    
-    .navBar a::after {
-        content: "";
-        color: var(--hover-color);
-        display: block;
-        height: 1.5px; /* Altura de la barra de subtítulo */
-        width: 100%; /* 100% del ancho del enlace */
-        background: var(--hover-color);
-        position: absolute;
-        bottom: 0; /* Colocar en la parte inferior del enlace */
-        left: 0;
-        transform: scaleX(0); /* Inicialmente no visible */
-        transition: transform 0.3s ease; /* Transición suave */
-    }
-    
-    .navBar a:hover::after {
-        /* transform: scaleX(1); */ /* Hacer visible la barra al pasar el mouse */
-        transition-property: initial;
-    }
-    .home-content {
-        flex-direction: column;
-    }
     .home-img {
-        width: 70%;
+        width: 80%;
         margin-top: 2rem;    
+    }
+    .home-content{
+        margin-bottom: 25rem;
     }
     .home-img img {
         width: 30vw;
     }
-    .home-content h1 {
+
+    .home-text h1 {
         font-size: 5rem;
         margin-top: 5rem;
     }
     .text-animation{        
-        width: 1rem;
-        height: 10rem;
-        font-size: 3rem;
-        min-width: 100px;
-        display: flexbox;
+        width: 1rem;       
     }
     .text-animation h3{
         justify-content: left;
@@ -701,10 +656,7 @@ ul li{
     }
     .text-animation span{
         position: absolute;
-        display: i;
-        white-space: nowrap;
         overflow: hidden;
-        border-right: 0.5rem solid var(--main-color);
     }    
     .contact{
         margin-top: 1rem;
@@ -716,7 +668,7 @@ ul li{
         
     }
     .contact h2{
-        color: var(--text-color);
+        color: var(--titles-color);
         font-size: 5rem;
         margin-bottom: 8rem;
     }
@@ -810,25 +762,77 @@ ul li{
         line-height: 1.6;
     }
     
+    .projects {
+        margin-bottom: 10rem;
+
+    }
     .projects-content{
         grid-template-columns: repeat(2fr, 1fr);
     }
     .project{
-
-        /* grid-template-columns: 1fr 1fr; */
         align-items: center;
         gap: 2rem;
     }
     .project h2 {
         width: 100%;
+    }
+    .project-img{
+        width: 150rem;
     }    
     .project h3{
-        font-size: 2.2rem;
+        font-size: 3.5rem;
         text-align: center;
     }
     .project p{
-        font-size: 1.4rem;
-        text-align: right;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    /* Estilo del modal */
+    .modal {
+        display: none; /* Oculto inicialmente */
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container {
+        max-width: 260rem;
+        max-height: 260rem;
+        overflow: auto; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: zoom-in;
+    }
+
+    .modal-content {
+        width: 70rem;
+        transition: transform 0.3s ease; /* Suavidad en el zoom */
+    }
+    .image-container:hover .modal-content {
+        transform: scale(1.8); /* Nivel de zoom al pasar el cursor */
+    }
+    .close {
+        position: absolute;
+        top: 10rem;
+        right: 42.5rem;
+        font-size: 7rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #ccc;
+    };
+    .aboutMe{        
+        margin-top: -4rem;
     }
 }
 
