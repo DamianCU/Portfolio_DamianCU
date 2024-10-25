@@ -248,7 +248,7 @@
             <h2 class="lang en" style="display: none;">Projects</h2>
             
             <div class="project">
-                <img src="./images/1.JPG" alt="Health Connect App" class="project-img">
+                <img src="./images/1.JPG" alt="Health Connect App" class="project-img" onclick="openModal(this)">
                 <h3>Health Connect App: Desarrollo completo de app médica</h3>
                 <h3 class="lang en" style="display:none;"></h3>
                 <p class="lang es">Projecto final de bootcamp; App para la conexión entre médicos y pacientes construida desde cero utilizando herramientas como Tailwind css, React, Node.js, MySQL, y por su puesto Html, Css y Javascript</p>
@@ -256,7 +256,7 @@
             </div>
             
             <div class="project">
-                <img src="./images/2.JPG" alt="Proyecto ChatGpt privado" class="project-img">
+                <img src="./images/2.JPG" alt="Proyecto ChatGpt privado" class="project-img" onclick="openModal(this)">
                 <h3>CHATGPT propio en el navegador [ DAM.IA.N ]</h3>
                 <h3 class="lang en" style="display:none;">CHATGPT in the browser [ DAM.IA.N ]</h3>
                 <p class="lang es">Usa IA de forma local y gratis. 100% privacidad.</p>
@@ -264,7 +264,7 @@
             </div>            
             
             <div class="project">
-                <img src="./images/3.JPG" alt="Arkanoid" class="project-img">
+                <img src="./images/3.JPG" alt="Arkanoid" class="project-img" onclick="openModal(this)">
                 <h3>ARKANOID Video Game</h3>
                 <h3 class="lang en" style="display:none;">ARKANOID Video Game</h3>
                 <p class="lang es">Uno de mis primeros videojuegos y gracias a Javascript he comprendido como se hizo la magia ^^</p>
@@ -272,7 +272,7 @@
             </div>
 
             <div class="project">
-                <img src="./images/tindr.JPG" alt="Tinder" class="project-img">
+                <img src="./images/tindr.JPG" alt="Tinder" class="project-img" onclick="openModal(this)">
                 <h3>Tinder swipe</h3>
                 <h3 class="lang en" style="display:none;">Tinder Swipe</h3>
                 <p class="lang es">Hemos construido el modo de uso de la aplicación de citas Tinder</p>
@@ -280,7 +280,7 @@
             </div>
 
             <div class="project">
-                <img src="./images/typing.png" alt="Entrenador de mecanografía" class="project-img">
+                <img src="./images/typing.png" alt="Entrenador de mecanografía" class="project-img" onclick="openModal(this)">
                 <h3>Entrenamiento mecanografía</h3>
                 <h3 class="lang en" style="display:none;">Typing Trainer</h3>
                 <p class="lang es">Nada como mantenerse activo y en forma, y como no, también podemos aplicarlo a la habilidad para escribir con el teclado. Practica tu habilidad para mejorar codeando.</p>
@@ -296,6 +296,14 @@
             </div>
         </div>
     </section>
+    
+    <!-- Para crear el modal donde visualizaremos las imagenes -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="image-container">
+            <img class="modal-content" id="modalImage">
+        </div>        
+    </div>
 
     <section class="aboutMe" id="aboutMe">
         <div class="aboutMe-content">

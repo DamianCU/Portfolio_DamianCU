@@ -132,3 +132,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+let zoomLevel = 1; // Variable para controlar el zoom
+
+function openModal(image) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modal.style.display = "flex"; // Muestra el modal
+    modalImage.src = image.src; // Asigna la fuente de la imagen al modal
+    zoomLevel = 1; // Restablece el zoom al abrir el modal
+    modalImage.style.transform = "scale(1)"; // Restaura la escala de la imagen
+}
+
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Oculta el modal
+}
+
+// Control del zoom al hacer clic en la imagen dentro del modal
+document.getElementById("modalImage").addEventListener("click", function () {
+    if (zoomLevel === 1) {
+        zoomLevel = 2;
+        this.style.transform = "scale(2)"; // Aplica zoom
+        this.style.cursor = "zoom-out"; // Cambia el cursor a zoom-out
+    } else {
+        zoomLevel = 1;
+        this.style.transform = "scale(1)"; // Restablece el zoom
+        this.style.cursor = "zoom-in"; // Cambia el cursor de nuevo a zoom-in
+    }
+});
+
+const modalImage = document.getElementById("modalImage");
+
+
