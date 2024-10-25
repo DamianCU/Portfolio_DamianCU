@@ -564,99 +564,250 @@ ul li{
         justify-content: flex-end;   
         z-index: 100;
     }    
-    .mainLogo {
+    .mainLogo{
+        width: 80%;
         font-size: 4rem;
-        width: 80%;        
+        color: whitesmoke;
+        text-shadow: 0 0 50px var(--main-color);
+        cursor: pointer;
+        transition: 0.3s ease;
+        display: flex;
+        align-items: left;
+        justify-content: left;    
+        text-decoration: none;
     }
     .mainLogo:hover{
         transform: translateX(2%);
     }
-    .language-selector{
-        width: 10%;
+    .mainLogo span{
+        color: var(--main-color);
+        text-shadow: 0 0 40px var(--main-color);
     }
-    #menu-icon{ 
-        font-size: 4rem;       
-        width: 7rem;
+    
+    .language-selector{
+        display: flex;
         align-items: center;
+        gap: 1rem;
+        justify-content: center;
+        margin-right: 1.5rem;
+    }
+    .language-selector button{
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.3s ease, box-shadow 0.3s ease;
+    }
+    .language-selector button img{
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        filter: grayscale(90%);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .language-selector button.active img{
+        filter: none;
+    }
+    .language-selector button:hover img{
+        transform: scale(1.1);
+        box-shadow: 0 0 5rem var(--main-color);
     }    
+    .menu-icon {
+        font-size: 4rem;
+        color: var(--main-color);
+        cursor: pointer;
+        margin-left: auto; /* Empujar hacia la derecha */
+        transition: all 0.3s ease;
+    }    
+    .menu-icon:hover {
+        transform: rotate(0.5turn);    
+    }
+    
     .navBar {
         display: none;
-        flex-direction: row;
+        width: 15rem; 
+        flex-direction: column;
         position: absolute;
-        top: 100%;
-        background-color: var(--main-color);
-        border-radius: 5rem;
-        box-shadow: 0 1rem 5rem var(--main-color);
-        z-index: 10;
-        transition: background-color 0.3s ease;
+        margin-top: 0.5rem;
+        top: 6rem;
+        right: 0.3%; 
+        background-color: var(--bg-color);
+        border-radius: 0 0 10px ;
+        box-shadow: 1px 0px 2px 2px var(--titles-color);
+        padding: 1rem;   
+    }    
+    .navBar.active {
+        display: flex; /* Mostrar cuando está activo */
     }
+    
     .navBar a {
-        color: var(--bg-color) !important;
-        background-color: var(--main-color);
-        border-radius: 1rem;
-        justify-content: center;
-        padding: 0.5rem;
-        margin-left: 2rem;
-        font-size: 1.8rem;
-        transition: all 0.3s ease;
+        display: flex;
+        width: 100%; /* Ocupa el 100% del ancho del contenedor */
+        padding: 1rem; /* Mayor padding para un mejor diseño */
+        color: var(--main-color) !important;
+        justify-content: flex-start; /* Justificar a la izquierda */
+        font-size: 1.6rem; /* Aumentar el tamaño de fuente */
         position: relative;
-        animation: neon-glow 1.5s infinite alternate;
+        transition: all 0.3s ease;
     }
+    
     .navBar a:hover {
-        color: var(--titles-color);
-        border-radius: 5rem;
-        background-color: var(--main-color);
-        box-shadow: 0 0 2rem 1rem rgb(255, 20, 147, 0.8),
-                    0 0 3rem 2rem rgb(255, 20, 147, 0.6);
-        border-bottom: 0.4rem solid rgba(237, 75, 208, 0.8);
-        transform: scale(1.1);
+        color: var(--hover-color);
+        transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+    }
+    
+    .navBar a::after {
+        content: "";
+        color: var(--hover-color);
+        display: block;
+        height: 1.5px; /* Altura de la barra de subtítulo */
+        width: 100%; /* 100% del ancho del enlace */
+        background: var(--hover-color);
+        position: absolute;
+        bottom: 0; /* Colocar en la parte inferior del enlace */
+        left: 0;
+        transform: scaleX(0); /* Inicialmente no visible */
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+    
+    .navBar a:hover::after {
+        /* transform: scaleX(1); */ /* Hacer visible la barra al pasar el mouse */
+        transition-property: initial;
     }
     .home-content {
         flex-direction: column;
     }
     .home-img {
-        width: 70%;    
+        width: 70%;
+        margin-top: 2rem;    
     }
     .home-img img {
         width: 30vw;
     }
     .home-content h1 {
-        font-size: 7rem;
+        font-size: 5rem;
+        margin-top: 5rem;
     }
     .text-animation{        
-        width: 90%;
+        width: 1rem;
         height: 10rem;
         font-size: 3rem;
-        min-width: 200px;
-        display: inline-block;
-    }   
+        min-width: 100px;
+        display: flexbox;
+    }
+    .text-animation h3{
+        justify-content: left;
+        text-align: left;
+    }
     .text-animation span{
-        position: relative;
-        display: inline-block;
+        position: absolute;
+        display: i;
         white-space: nowrap;
         overflow: hidden;
-        border-right: 2px solid var(--main-color);
+        border-right: 0.5rem solid var(--main-color);
     }    
     .contact{
-        font-size: 2rem;
+        margin-top: 1rem;
+        width: 60rem;
+        height: 50rem;
+        font-size: 3.5rem;
         padding: 1.5rem;
-        max-width: 80%;
+        line-height: 6rem;
+        
     }
     .contact h2{
         color: var(--text-color);
-        font-size: 2rem;
+        font-size: 5rem;
+        margin-bottom: 8rem;
+    }
+    .contact ul li{
+        line-height: 8rem;
+        font-weight: 600 ;
+    }
+    
+    .skills{
+        margin-top: -10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 10rem;
+    }
+    .skills h2{
+        border-bottom: 0.5rem solid var(--hover-color);
+        margin-bottom: -1rem;
+        
+    }
+    .skills h3{
+        text-align: center;
+        font-size: 4.5rem;
         margin-bottom: 1rem;
     }
-    .experience-content h2 {
+    .skills ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .mainSkills, .secondarySkills{
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+    }
+    .skills li{
+        width: 80%;
+        height: auto;
+        color: var(--main-color);
+        padding: 2rem;
         font-size: 3rem;
+        margin-bottom: -2rem;
+        display: flex;
+    }
+    .skills i{
+        font-size: 12rem;
+        margin-bottom: 1rem;
+    }
+    .skills li span{
+        font-size: 3rem;
+        color: var(--hover-color);
+    }
+    .experience {
+        margin-top: 7rem;
+        display:flex;
+        justify-content: center;
+        padding-top: 7rem;
+    }
+    .experience-content{
+        max-width: 100%;
+        margin-top: -12rem;
+    }
+    .experience-content h2 {
+        color: #ff66cc;
+        font-size: 5rem;
         text-align: center;
+        border-bottom: 0.5rem solid var(--titles-color);
+        margin-bottom: 6rem;
+        width: 100%;
     }
+    
+    .job {
+        margin-bottom: 2.5rem;
+        padding: 2rem;
+        background-color: #23021f;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgb(220, 49, 250)
+    }
+    
     .job h3 {
-        font-size: 1.8rem;
+        font-size: 3.5rem;
+        color: #00ffee;
+        margin-bottom: 1rem;
     }
+    
     .job p {
-        font-size: 1.4rem;
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: #ccc;
+        line-height: 1.6;
     }
+    
     .projects-content{
         grid-template-columns: repeat(2, 1fr);
     }
