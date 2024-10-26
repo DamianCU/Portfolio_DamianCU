@@ -19,10 +19,9 @@ const typingSpeed = 80;     // Velocidad de escritura
 const deletingSpeed = 50;   // Velocidad de borrado
 const delayBetweenWords = 1800;     // Pausa entre palabras
 
-
-// Funcion para typing de la animación molona
+// Función para typing de la animación
 function typeWords() {
-    const typingElement = document.querySelector('.text-animation span');
+    const typingElement = document.querySelector('.home-text .text-animation span');
     const currentWord = words[wordIndex];
 
     if (isDeleting) {
@@ -30,8 +29,8 @@ function typeWords() {
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length; // Se mueve a la siguiente imagen
-            setTimeout(typeWords, delayBetweenWords); // Pause before typing the next word
+            wordIndex = (wordIndex + 1) % words.length; // Pasa a la siguiente palabra
+            setTimeout(typeWords, delayBetweenWords); // Pausa antes de escribir la próxima palabra
         } else {
             setTimeout(typeWords, deletingSpeed);
         }
@@ -50,89 +49,78 @@ function typeWords() {
 // Función para el cambio de idioma
 function setLanguage(lang) {
     const buttons = document.querySelectorAll('.language-selector button');
-    const elementsToTranslate = document.querySelectorAll('.lang'); // Selección de todos los elementos con clase "lang"
-    const typingElement = document.querySelector('.text-animation span');
-
-    // Eliminación de la clase "active"
-    buttons.forEach(button => {button.classList.remove('active')});
+    const elementsToTranslate = document.querySelectorAll('.lang');
+    
+    buttons.forEach(button => button.classList.remove('active'));
     const activeButton = document.querySelector(`.language-selector button[lang="${lang}"]`);
-
-    // Adición de la clase "active" al boton clicado
-    if (activeButton) {
-        activeButton.classList.add('active');
-    }
+    if (activeButton) activeButton.classList.add('active');
 
     // Mostrar/ocultar contenido en base al idioma seleccionado
     elementsToTranslate.forEach(element => {
-        if (element.classList.contains(lang)) {
-            element.style.display = 'block';  // Hace visible el elemento en el idioma seleccionado
-        } else {
-            element.style.display = 'none'; // Oculta el otro idioma
-        }
+        element.style.display = element.classList.contains(lang) ? 'block' : 'none';
     });
 
-    // Actualiza las palabras y lanza de nuevo la animación
+    // Actualiza las palabras y reinicia la animación
     words = lang === 'es' ? wordsEs : wordsEn;
-
-    // Resetea la animación de typing
     wordIndex = 0;
     charIndex = 0;
     isDeleting = false;
-/*     const typingElement = document.querySelector('.text-animation span');
- */    typingElement.textContent = ''; // Limpia el contenido del span
-    setTimeout(typeWords,100); // Relanza la animación
+
+    // Asegura que solo el elemento correcto tenga la clase de animación activa
+    document.querySelectorAll('.home-text h3').forEach(h3 => h3.classList.remove('text-animation'));
+    const activeTextAnimation = document.querySelector(`.home-text .lang.${lang} h3`);
+    if (activeTextAnimation) activeTextAnimation.classList.add('text-animation');
+
+    setTimeout(typeWords, 100); 
 }
 
-// Function to show/hide the dropdown menu when clicking the menu icon
+document.addEventListener('DOMContentLoaded', function() {
+    typeWords();
+
+    document.querySelectorAll('.language-selector button').forEach(button => {
+        button.addEventListener('click', function () {
+            const lang = this.getAttribute('lang');
+            setLanguage(lang);
+        });
+    });
+});
+
+
+// Función para mostrar/ocultar el menú al hacer clic en el icono del menú
 function toggleMenu() {
     const navBar = document.querySelector('.navBar');
     if (navBar) {
-        navBar.classList.toggle('active'); // Show/Hide the 'active' class of navBar
+        navBar.classList.toggle('active'); // Muestra/Oculta la clase 'active' de navBar
     }
 }
-// Function to hide the menu
+
+// Función para ocultar el menú
 function hideMenu() {
     const navBar = document.querySelector('.navBar');
     if (navBar) {
-        navBar.classList.remove('active'); // Hide the menu
+        navBar.classList.remove('active'); // Oculta el menú
     }
 }
-// Ensure the menu icon exists before adding event listeners
+
+// Asegura que el icono de menú existe antes de añadir eventos
 const menuIcon = document.getElementById('menu-icon');
 if (menuIcon) {
     menuIcon.addEventListener('click', toggleMenu);
 }
 
-// Hide the menu when clicking a link within the menu
+// Oculta el menú al hacer clic en un enlace dentro del menú
 const navLinks = document.querySelectorAll('.navBar a');
 navLinks.forEach(link => {
-    link.addEventListener('click', hideMenu); // Use hideMenu function
+    link.addEventListener('click', hideMenu);
 });
 
-// Hide the menu when clicking outside
+// Oculta el menú al hacer clic fuera de él
 document.addEventListener('click', function(event) {
     const navBar = document.querySelector('.navBar');
     if (navBar && navBar.classList.contains('active') && !navBar.contains(event.target) && !menuIcon.contains(event.target)) {
-        hideMenu(); // Hide the menu if not in navBar or menu
+        hideMenu();
     }
 });
-
-
-
-
-// Start the typing animation and language handling on page load
-document.addEventListener('DOMContentLoaded', function() {
-    typeWords(); // Start the typing animation
-
-    // Set up language toggle on page load
-    document.querySelectorAll('.language-selector button').forEach(button => {
-        button.addEventListener('click', function () {
-            const lang = this.getAttribute('lang'); // Get the language from the button
-            setLanguage(lang); // Change language
-        });
-    });
-});
-
 
 
 let zoomLevel = 1; // Variable para controlar el zoom
@@ -164,7 +152,3 @@ document.getElementById("modalImage").addEventListener("click", function () {
         this.style.cursor = "zoom-in"; // Cambia el cursor de nuevo a zoom-in
     }
 });
-
-const modalImage = document.getElementById("modalImage");
-
-// NOTE: 
