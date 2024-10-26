@@ -184,7 +184,6 @@ ul li{
     transition-property: initial;
 }
 
-
 .home{
     display: flex;
     flex-direction: column;
@@ -200,7 +199,8 @@ ul li{
     gap: 2rem;
 }
 .home-img{
-
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -226,8 +226,7 @@ ul li{
     height: 10rem;
     max-width: 100%;
     font-size: 3rem;
-    margin-bottom: 1.5rem;
-    margin-top: 0.8rem;      
+    margin-bottom: 5rem;      
 }
     
 .home-text p{
@@ -286,7 +285,6 @@ ul li{
 }
 .skills h2{
     border-bottom: 0.5rem solid var(--hover-color);
-    margin-bottom: 5rem;
     
 }
 .skills h3{
@@ -302,7 +300,7 @@ ul li{
 .mainSkills, .secondarySkills{
     width: 100%;
     height: auto;
-    padding: 3rem;
+    padding: 1rem;
 }
 .skills li{
     width: 40%;

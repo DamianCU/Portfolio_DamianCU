@@ -167,4 +167,4 @@ document.getElementById("modalImage").addEventListener("click", function () {
 
 const modalImage = document.getElementById("modalImage");
 
-
+// NOTE: 
