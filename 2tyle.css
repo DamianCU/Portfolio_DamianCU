@@ -408,7 +408,7 @@ ul li{
 
 
 .experience {
-    margin-top: 1rem;
+    margin-top: 4rem;
     display:flex;
     justify-content: center;
     padding: 5rem;
@@ -460,8 +460,8 @@ ul li{
     gap: 3rem;
     
 }
-.projects-content h2{
-    color: var(--main-color);
+.projects h2{
+    color: var(--titles-color);
     font-size: 5rem;
     margin-bottom: 6rem;
     border-bottom: 0.5rem solid var(--hover-color);
@@ -518,37 +518,6 @@ ul li{
 .project-img:hover {
     transform: scale(1.05);
 }
-
-/* 
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); 
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container {
-    max-width: 70rem;
-    max-height: 30rem;
-    overflow: auto; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    width: 50rem;
-    transition: transform 0.3s ease; 
-}
-.image-container:hover .modal-content {
-    transform: scale(1.5); 
-} */
 #imageModal {
     display: none; /* Por defecto, el modal está oculto */
     position: fixed;
@@ -650,17 +619,19 @@ ul li{
 
     .home-text h1 {
         font-size: 5rem;
-        margin-top: 5rem;
+        margin: 5rem;
     }
     .text-animation{        
         width: 1rem;       
     }
     .text-animation h3{
-        justify-content: left;
-        text-align: left;
+        justify-content: center;
+        text-align: center;
     }
     .text-animation span{
         position: absolute;
+        max-width: 60%;
+        margin-left: 10rem;
         overflow: hidden;
     }    
     .contact{
@@ -669,8 +640,7 @@ ul li{
         height: 50rem;
         font-size: 3.5rem;
         padding: 1.5rem;
-        line-height: 6rem;
-        
+        line-height: 6rem;        
     }
     .contact h2{
         color: var(--titles-color);
@@ -769,7 +739,6 @@ ul li{
     
     .projects {
         margin-bottom: 10rem;
-
     }
     .projects-content{
         grid-template-columns: repeat(2fr, 1fr);
@@ -778,7 +747,7 @@ ul li{
         align-items: center;
         gap: 2rem;
     }
-    .project h2 {
+    .projects h2 {
         width: 100%;
     }
     .project-img{
@@ -917,8 +886,8 @@ ul li{
     }  
     .navBar a {
         display: flex;
-        padding: 0.6rem;
-        width: 15rem;
+        padding: 0.8rem;
+        width: 17rem;
         border-radius: 3rem;
         font-size: 1.5rem;
         font-weight: 550;
@@ -983,10 +952,11 @@ ul li{
     }
     .home-text{
         flex: 1;
-        max-width: 55%;
+        max-width: 60%;
         text-align: left;
         margin-top: 1rem;
-        padding-left: 7rem;
+        margin-left: -5rem;
+        padding-left: 5rem;
     }    
     .home-text h1{
         font-size: 9rem;
@@ -1002,7 +972,8 @@ ul li{
         position: relative;
         display: inline-block;
         white-space: nowrap;
-        overflow: hidden;
+        margin-left: 5rem;
+        overflow: visible;
         border-right: 2px solid var(--main-color);
     }
     .text-animation span::before{
@@ -1020,7 +991,7 @@ ul li{
     }
     .home-text p{
         font-size: 2rem;
-        margin: 5rem 0 0 0;
+        margin-left: 5rem;
         font-weight: 200;
         line-height: 1.2;
         max-width: 100%;
@@ -1032,19 +1003,47 @@ ul li{
         width: 100%;
         min-width: 500px;
         padding: 2rem;
-        margin-top: 30rem;
+        margin-top: 5rem;
     }
     .contact h2{
         color: var(--hover-color);
-        font-size: 2.8rem;
+        font-size: 4rem;
+        margin-top: 1.5rem;
         margin-bottom: 1rem;
-    }    
+    }
+    .contact ul{
+        margin-bottom: 1rem;
+    }
     .skills h2{
+        font-size: 6rem;
+    }
+    .skills h3{
         font-size: 5rem;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
     }
     .skills li {
-        width: 150px;
+        width: 100rem;
+        max-width: 150px;
         height: 150px;
+    }
+    .projects-content{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 5rem;        
+    }
+    .projects-content h2{
+        font-size: 5rem;
+    }
+    .project{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project img{
+        max-width: 20rem;
+        height: auto;
     }
 }
 
