@@ -1,4 +1,4 @@
-// Arrays de palabras para la animación.
+// Arrays de palabras para la animación
 const wordsEs = [
     "Desarrollador Frontend",
     "Desarrollador Backend en progreso",
@@ -11,13 +11,13 @@ const wordsEn = [
     "3D Artist",
     "Video Games Developer in Progress"
 ];
-let words = wordsEs;    // Español por defecto
+let words = wordsEs; // Español por defecto
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 80;     // Velocidad de escritura
-const deletingSpeed = 50;   // Velocidad de borrado
-const delayBetweenWords = 1800;     // Pausa entre palabras
+const typingSpeed = 80; // Velocidad de escritura
+const deletingSpeed = 50; // Velocidad de borrado
+const delayBetweenWords = 1800; // Pausa entre palabras
 
 // Función para typing de la animación
 function typeWords() {
@@ -29,8 +29,8 @@ function typeWords() {
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length; // Pasa a la siguiente palabra
-            setTimeout(typeWords, delayBetweenWords); // Pausa antes de escribir la próxima palabra
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(typeWords, delayBetweenWords);
         } else {
             setTimeout(typeWords, deletingSpeed);
         }
@@ -39,7 +39,7 @@ function typeWords() {
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === currentWord.length) {
             isDeleting = true;
-            setTimeout(typeWords, delayBetweenWords); // Pausa antes de borrar
+            setTimeout(typeWords, delayBetweenWords);
         } else {
             setTimeout(typeWords, typingSpeed);
         }
@@ -74,6 +74,7 @@ function setLanguage(lang) {
     setTimeout(typeWords, 100); 
 }
 
+// Evento para inicializar animación y eventos de idioma
 document.addEventListener('DOMContentLoaded', function() {
     typeWords();
 
@@ -84,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 
 // Función para mostrar/ocultar el menú al hacer clic en el icono del menú
 function toggleMenu() {
@@ -122,9 +122,11 @@ document.addEventListener('click', function(event) {
     }
 });
 
+let zoomLevel = 1; // Nivel de zoom inicial
+let isDragging = false; // Estado de arrastre
+let startX, startY, initialX, initialY; // Posiciones de inicio y posición actual
 
-let zoomLevel = 1; // Variable para controlar el zoom
-
+// Abre el modal y establece la imagen
 function openModal(image) {
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
@@ -132,23 +134,66 @@ function openModal(image) {
     modal.style.display = "flex"; // Muestra el modal
     modalImage.src = image.src; // Asigna la fuente de la imagen al modal
     zoomLevel = 1; // Restablece el zoom al abrir el modal
-    modalImage.style.transform = "scale(1)"; // Restaura la escala de la imagen
+    modalImage.style.transform = "scale(1)"; // Restablece la escala de la imagen
+    modalImage.style.cursor = "grab"; // Cursor para el arrastre
+    modalImage.style.left = "0px"; // Restablece la posición horizontal
+    modalImage.style.top = "0px"; // Restablece la posición vertical
 }
 
+// Cierra el modal
 function closeModal() {
     const modal = document.getElementById("imageModal");
     modal.style.display = "none"; // Oculta el modal
 }
 
-// Control del zoom al hacer clic en la imagen dentro del modal
-document.getElementById("modalImage").addEventListener("click", function () {
-    if (zoomLevel === 1) {
-        zoomLevel = 2;
-        this.style.transform = "scale(2)"; // Aplica zoom
-        this.style.cursor = "zoom-out"; // Cambia el cursor a zoom-out
+// Control de zoom mediante la rueda del mouse
+document.getElementById("imageModal").addEventListener("wheel", function(event) {
+    event.preventDefault(); // Evita el scroll en la página
+
+    const modalImage = document.getElementById("modalImage");
+
+    // Ajusta el nivel de zoom en función de la dirección de desplazamiento de la rueda
+    if (event.deltaY < 0) {
+        zoomLevel = Math.min(zoomLevel + 0.1, 3); // Zoom máximo a 3x
     } else {
-        zoomLevel = 1;
-        this.style.transform = "scale(1)"; // Restablece el zoom
-        this.style.cursor = "zoom-in"; // Cambia el cursor de nuevo a zoom-in
+        zoomLevel = Math.max(zoomLevel - 0.1, 1); // Zoom mínimo a 1x
+    }
+
+    modalImage.style.transform = `scale(${zoomLevel})`; // Aplica el nivel de zoom
+
+    // Cambia el cursor en función del nivel de zoom
+    modalImage.style.cursor = zoomLevel > 1 ? "grab" : "default";
+});
+
+// Eventos para arrastrar la imagen solo en zoom
+const modalImage = document.getElementById("modalImage");
+
+// Al comenzar el arrastre
+modalImage.addEventListener("mousedown", function(event) {
+    if (zoomLevel > 1) { // Solo permite arrastrar si hay zoom aplicado
+        isDragging = true;
+        modalImage.style.cursor = "grabbing"; // Cambia el cursor
+        startX = event.clientX;
+        startY = event.clientY;
+        initialX = parseInt(modalImage.style.left) || 0;
+        initialY = parseInt(modalImage.style.top) || 0;
+    }
+});
+
+// Al mover el ratón durante el arrastre
+document.addEventListener("mousemove", function(event) {
+    if (isDragging) {
+        const dx = event.clientX - startX;
+        const dy = event.clientY - startY;
+        modalImage.style.left = `${initialX + dx}px`; // Actualiza posición horizontal
+        modalImage.style.top = `${initialY + dy}px`;  // Actualiza posición vertical
+    }
+});
+
+// Al soltar el ratón, se detiene el arrastre
+document.addEventListener("mouseup", function() {
+    if (isDragging) {
+        isDragging = false;
+        modalImage.style.cursor = "grab"; // Restablece el cursor
     }
 });

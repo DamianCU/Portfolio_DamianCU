@@ -299,11 +299,8 @@
     </section>
     
     <!-- Para crear el modal donde visualizaremos las imagenes -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="image-container">
-            <img class="modal-content" id="modalImage">
-        </div>        
+    <div id="imageModal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Imagen ampliada">
     </div>
 
     <section class="aboutMe" id="aboutMe">
