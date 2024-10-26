@@ -1,4 +1,4 @@
-// Arrays of words for each language
+// Arrays de palabras para la animación.
 const wordsEs = [
     "Desarrollador Frontend",
     "Desarrollador Backend en progreso",
@@ -11,15 +11,16 @@ const wordsEn = [
     "3D Artist",
     "Video Games Developer in Progress"
 ];
-let words = wordsEs; // En español por defecto
+let words = wordsEs;    // Español por defecto
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 80; // Velocidad de escritura
-const deletingSpeed = 50; // velocidad de borrado
-const delayBetweenWords = 1500; // Pausa entre palabras
+const typingSpeed = 80;     // Velocidad de escritura
+const deletingSpeed = 50;   // Velocidad de borrado
+const delayBetweenWords = 1800;     // Pausa entre palabras
 
-// Funcion para typing 
+
+// Funcion para typing de la animación molona
 function typeWords() {
     const typingElement = document.querySelector('.text-animation span');
     const currentWord = words[wordIndex];
@@ -29,7 +30,7 @@ function typeWords() {
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+            wordIndex = (wordIndex + 1) % words.length; // Se mueve a la siguiente imagen
             setTimeout(typeWords, delayBetweenWords); // Pause before typing the next word
         } else {
             setTimeout(typeWords, deletingSpeed);
@@ -39,48 +40,47 @@ function typeWords() {
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === currentWord.length) {
             isDeleting = true;
-            setTimeout(typeWords, delayBetweenWords); // Pause before starting to delete
+            setTimeout(typeWords, delayBetweenWords); // Pausa antes de borrar
         } else {
             setTimeout(typeWords, typingSpeed);
         }
     }
 }
 
-// Function to change the language of the portfolio
+// Función para el cambio de idioma
 function setLanguage(lang) {
     const buttons = document.querySelectorAll('.language-selector button');
-    const elementsToTranslate = document.querySelectorAll('.lang'); // Select all elements with class 'lang'
+    const elementsToTranslate = document.querySelectorAll('.lang'); // Selección de todos los elementos con clase "lang"
+    const typingElement = document.querySelector('.text-animation span');
 
-    // Remove the 'active' class from all buttons
-    buttons.forEach(button => {
-        button.classList.remove('active');
-    });
-
-    // Add the 'active' class to the clicked button
+    // Eliminación de la clase "active"
+    buttons.forEach(button => {button.classList.remove('active')});
     const activeButton = document.querySelector(`.language-selector button[lang="${lang}"]`);
+
+    // Adición de la clase "active" al boton clicado
     if (activeButton) {
         activeButton.classList.add('active');
     }
 
-    // Show/Hide content based on the selected language
+    // Mostrar/ocultar contenido en base al idioma seleccionado
     elementsToTranslate.forEach(element => {
         if (element.classList.contains(lang)) {
-            element.style.display = ''; // Show the element if it matches the language
+            element.style.display = 'block';  // Hace visible el elemento en el idioma seleccionado
         } else {
-            element.style.display = 'none'; // Hide the rest of the languages
+            element.style.display = 'none'; // Oculta el otro idioma
         }
     });
 
-    // Update the words and restart the typing animation
+    // Actualiza las palabras y lanza de nuevo la animación
     words = lang === 'es' ? wordsEs : wordsEn;
 
-    // Reset the typing animation
+    // Resetea la animación de typing
     wordIndex = 0;
     charIndex = 0;
     isDeleting = false;
-    const typingElement = document.querySelector('.text-animation span');
-    typingElement.textContent = ''; // Clear the content of the span
-    setTimeout(typeWords,100); // Restart the animation
+/*     const typingElement = document.querySelector('.text-animation span');
+ */    typingElement.textContent = ''; // Limpia el contenido del span
+    setTimeout(typeWords,100); // Relanza la animación
 }
 
 // Function to show/hide the dropdown menu when clicking the menu icon
