@@ -1,63 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2o Intento</title>
+    <title>Damián Carrillo Ureña</title>
 
     <link rel="icon" href="./images/ficon1_bg_removed.png">
     <link rel="stylesheet" href="./2tyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet" >
 </head>
 <body>
-    <header>
-        <a href="#name" class="mainLogo"><strong>Damián <span> Carrillo</span></strong></a>
+    <header role="banner">
+        <a href="#name" class="mainLogo" aria-label="Damián Carrillo Ureña"><strong>Damián <span> Carrillo</span></strong></a>
         
-        <div class="language-selector">
-            <button lang="es" class="active">
-                <img src="./images/langEspañol.JPG" alt="Español">
+        <div class="language-selector" role="navigation" aria-label="Selector de idioma">
+            <button lang="es" class="active" aria-pressed="true">
+                <img src="./images/langEspañol.JPG" alt="Seleccionador Español">
             </button>
-            <button lang="en">
-                <img src="./images/englishFlag.JPG" alt="English">
+            <button lang="en" aria-pressed="false">
+                <img src="./images/englishFlag.JPG" alt="Select English">
             </button>
         </div>
 
-        <div class="menu-icon" id="menu-icon">
+        <div class="menu-icon" id="menu-icon" role="button" aria-label="Abrir menú">
             &#9776;
         </div>
         
-        <nav class="navBar" >
-            <a href="#home" class="lang es">Inicio</a>
-            <a href="#home" class="lang en" style="display:none">Home</a>
+        <nav class="navBar" aria-label="Navegación principal">
+            <a href="#home" class="lang es" aria-label="Inicio"></a>>Inicio</a>
+            <a href="#home" class="lang en" aria-label="Home" style="display:none">Home</a>
 
-            <a href="#contact1" class="lang es">Contacto</a>
-            <a href="#contact1" class="lang en" style="display:none">Contact</a>
+            <a href="#contact1" class="lang es" aria-label="Contacto">Contacto</a>
+            <a href="#contact1" class="lang en" aria-label="Contact" style="display:none">Contact</a>
 
-            <a href="#homeSkills" class="lang es">Skills</a>
-            <a href="#homeSkills" class="lang en" style="display:none">Skills</a>
+            <a href="#homeSkills" class="lang es" aria-label="Skills">Skills</a>
+            <a href="#homeSkills" class="lang en" aria-label="Skills" style="display:none">Skills</a>
 
-            <a href="#formation" class="lang es">Formación</a>
-            <a href="#formation" class="lang en" style="display:none">Formation</a>
+            <a href="#formation" class="lang es" aria-label="Formación">Formación</a>
+            <a href="#formation" class="lang en" aria-label="Formation" style="display:none">Formation</a>
 
-            <a href="#experience" class="lang es">Experiencia</a>
-            <a href="#experience" class="lang en" style="display:none">Experience</a>
+            <a href="#experience" class="lang es" aria-label="Experiencia">Experiencia</a>
+            <a href="#experience" aria-label="Experience" class="lang en" style="display:none">Experience</a>
 
-            <a href="#projects" class="lang es">Proyectos</a>
-            <a href="#projects" class="lang en" style="display:none">Projects</a>
+            <a href="#projects" class="lang es" aria-label="Proyectos">Proyectos</a>
+            <a href="#projects" aria-label="Projects" class="lang en" style="display:none">Projects</a>
 
-            <a href="#aboutMe" class="lang es">Sobre&nbsp;mí</a>
-            <a href="#aboutMe" class="lang en" style="display:none">About&nbsp;me</a>
-        </nav>
-        
+            <a href="#aboutMe" class="lang es" aria-label="Sobre mí">Sobre&nbsp;mí</a>
+            <a href="#aboutMe" aria-label="About me" class="lang en" style="display:none">About&nbsp;me</a>
+        </nav>        
     </header>
 
-    <section class="home" id="home">
+    <section class="home" id="home" role="region" aria-labelledby="home-title">
         <div class="home-content">
             <div class="home-img">
-                <img src="./images/dmcu2.JPG" alt="Foto principal">
+                <img src="./images/dmcu2.JPG" alt="Foto de Damián Carrillo">
             </div>
             <div class="home-text">
-                <div class="lang es">
+                <div class="lang es" id="home-title">
                     <h1>Hola, soy <span>Damián</span></h1>
                     <h3 class="text-animation"><span></span></h3>
                     <p>"Apasionado del diseño digital que transforma ideas en experiencias memorables. Desde la creación de sitios web hasta el desarrollo de videojuegos y aplicaciones innovadoras, mi enfoque combina estética y funcionalidad para potenciar la interacción del usuario y superar expectativas en cada proyecto."</p>
@@ -70,23 +69,24 @@
                 </div>
             </div>  
         </div>
-        <section id="contact1">
+
+        <section id="contact1" role="region" aria-labelledby="contact-title">
             <div class="contact" id="contact">
-                <h2 class="lang es"><strong>Contacto</strong></h2>
+                <h2 class="lang es" id="contact-title"><strong>Contacto</strong></h2>
                 <h2 class="lang en" style="display:none;"><strong>Contact</strong></h2>
                 <ul>
-                    <li>dcu191089@hotmail.es</li>
-                    <li>+34 608808910</li>
-                    <li><a href="https://www.linkedin.com/in/dcu7548" target="_blank"> www.linkedin.com/in/dcu7548</a></li>
-                    <li><a href="https://github.com/DamianCu/" target="_blank"> https://github.com/DamianCu/</a></li>
+                    <li><a href="mailto:dcu191089@hotmail.es">dcu191089@hotmail.es</a></li>
+                    <li><a href="tel:+34608808910">+34 608808910</a></li>
+                    <li><a href="https://www.linkedin.com/in/dcu7548" target="_blank" rel="noopener noreferrer"> www.linkedin.com/in/dcu7548</a></li>
+                    <li><a href="https://github.com/DamianCu/" target="_blank" rel="noopener noreferrer"> https://github.com/DamianCu/</a></li>
                 </ul>            
 
             </div>
         </section>
 
-        <section id="homeSkills">            
+        <section id="homeSkills" role="region" aria-labelledby="skills-title">            
             <div class="skills">
-                <h2 class="lang es">Skills</h2>
+                <h2 class="lang es" id="skills-title">Skills</h2>
                 <h2 class="lang en" style="display:none;">Skills</h2>
                 <div class="mainSkills">
                     <h3 class="lang es">Principales</h3>
@@ -310,7 +310,7 @@
     </section>
     
     <!-- Para crear el modal donde visualizaremos las imagenes -->
-    <div id="imageModal" onclick="closeModal()">
+    <div id="imageModal" onclick="closeModal()" aria-hidden="true" aria-label="Modal de imagen ampliada">
         <img id="modalImage" src="" alt="Imagen ampliada">
     </div>
 
@@ -321,16 +321,28 @@
             
             <p class="lang es">Soy un desarrollador web fullstack con experiencia en React, Node.js, MySQL, y Tailwind CSS. Me gusta trabajar en equipo y diseñar interfaces amigables para usuarios. También me encanta aprender y probar nuevas tecnologías. Me gusta hacer cosas que me diviertan y me siento motivado por encontrar nuevas formas de trabajar.</p>
             <p class="lang en" style="display: none;">I'm a fullstack web developer with experience in React, Node.js, MySQL, and Tailwind CSS. I love working in teams and designing user-friendly interfaces.
+        </div>
+
     </section>
 
     <script src="./2script.js"></script>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <h3>Damián Carrillo Ureña</h3>
-            <p>Fullstack Developer</p>
-            <p>&copy; 2024 - Built with passion by Damián Carrillo Ureña</p>
-        </div>
+    
+    <footer>
+        <nav aria-label="Redes sociales">
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.linkedin.com/in/dcu7548" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
+                        <i class='bx bxl-linkedin'></i> <span class="sr-only">LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/DamianCu/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+                        <i class='bx bxl-github'></i> <span class="sr-only">GitHub</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Damián Carrillo. Todos los derechos reservados.</p>
     </footer>    
 </body>
 </html>

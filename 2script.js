@@ -15,11 +15,13 @@ let words = wordsEs; // Español por defecto
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 80; // Velocidad de escritura
-const deletingSpeed = 50; // Velocidad de borrado
-const delayBetweenWords = 1800; // Pausa entre palabras
 
-// Función para typing de la animación
+// Velocidades de animación y retardo entre palabras
+const typingSpeed = 80; 
+const deletingSpeed = 50; 
+const delayBetweenWords = 1800; 
+
+// Animación chula ^^
 function typeWords() {
     const typingElement = document.querySelector('.home-text .text-animation span');
     const currentWord = words[wordIndex];
@@ -55,7 +57,6 @@ function setLanguage(lang) {
     const activeButton = document.querySelector(`.language-selector button[lang="${lang}"]`);
     if (activeButton) activeButton.classList.add('active');
 
-    // Mostrar/ocultar contenido en base al idioma seleccionado
     elementsToTranslate.forEach(element => {
         element.style.display = element.classList.contains(lang) ? 'block' : 'none';
     });
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 // Función para mostrar/ocultar el menú al hacer clic en el icono del menú
 function toggleMenu() {
