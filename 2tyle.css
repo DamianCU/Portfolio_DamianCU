@@ -535,7 +535,7 @@ ul li{
 
 .aboutMe{
     margin-top: 10rem;
-    padding: 2rem;
+    padding: 5rem;
     background-color: #151514;
     box-shadow: 0 0 150px rgba(34, 34, 250, 0.979);
 }
@@ -548,7 +548,8 @@ ul li{
 }
 .aboutMe p{
     color: #ccc;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    padding: 3rem;
     line-height: 1.6;
     margin-bottom: 3rem;
     text-align: center;
