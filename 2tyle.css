@@ -6,7 +6,6 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
 }
 
 :root{
@@ -25,15 +24,16 @@ html{
 }  
   /* Estilo cuando el mouse está encima de la barra en Firefox*/
 html:hover {
-    scrollbar-color: var(--main-color) #f1f1f1;  /* Color al hacer hover */
+    scrollbar-color: var(--hover-color) #f1f1f1; 
 }
     
 body {
+    font-family: "Poppins", sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     background-color: var(--bg-color); 
     color: var(--text-color);
-    overflow-y: hidden;
+    overflow-y: auto;
     padding-top: 15rem;    
 }
 header{
@@ -79,12 +79,7 @@ ul li{
     color: whitesmoke;
     text-shadow: 0 0 50px var(--main-color);
     cursor: pointer;
-    transition: 0.3s ease;
-    display: flex;
-    align-items: left;
-    justify-content: left;    
-    text-decoration: none;
-    /* transition: all 0.3s ease; */
+    transition: 0.3s ease;    
 }
 .mainLogo:hover{
     transform: translateX(2%);
@@ -125,16 +120,17 @@ ul li{
     font-size: 3.5rem;
     color: var(--main-color);
     cursor: pointer;
-    margin-left: auto; /* Empujar hacia la derecha */
+    margin-left: auto; 
     transition: all 0.3s ease;
+    transform-origin: center;    
 }
 
 .menu-icon:hover {
-    transform: rotate(0.5turn);    
+    transform: rotate(180deg);
 }
 
 .navBar {
-    display: none; /* Ocultar inicialmente */
+    display: none; 
     width: 15rem; 
     flex-direction: column;
     position: absolute;
@@ -142,54 +138,57 @@ ul li{
     top: 6rem;
     right: 0.3%; 
     background-color: var(--bg-color);
-    border-radius: 0 0 10px ; /* Esquinas más redondeadas */
+    border-radius: 4px 4px 4px 15px ; 
     box-shadow: 0.5px 0px 0px 0.5px var(--titles-color);
     padding: 1rem; 
     transition: all 1s ease;
 }
 .navBar.active {
-    display: flex; /* Mostrar cuando está activo */
+    display: flex; 
 }
 .navBar a {
     display: flex;
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    padding: 1rem; /* Mayor padding para un mejor diseño */
+    width: 100%; 
+    padding: 1rem; 
     color: var(--main-color) !important;
-    justify-content: flex-start; /* Justificar a la izquierda */
-    font-size: 1.6rem; /* Aumentar el tamaño de fuente */
+    justify-content: flex-start; 
+    font-size: 1.6rem; 
     position: relative;
     transition: all 0.3s ease;
 }
 
 .navBar a:hover {
     color: var(--hover-color);
-    transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+    transform: scale(1.8); 
 }
 
 .navBar a::after {
     content: "";
     color: var(--hover-color);
     display: block;
-    height: 1.5px; /* Altura de la barra de subtítulo */
-    width: 100%; /* 100% del ancho del enlace */
+    height: 1.5px; 
+    width: 100%; 
     background: var(--hover-color);
     position: absolute;
-    bottom: 0; /* Colocar en la parte inferior del enlace */
+    bottom: 0; 
     left: 0;
-    transform: scaleX(0); /* Inicialmente no visible */
-    transition: transform 0.3s ease; /* Transición suave */
+    transform: scaleX(0); 
+    transition: transform 0.3s ease;
 }
 
 .navBar a:hover::after {
-    transition-property: initial;
+    color: var(--hover-color);
+    width: 1rem;
+    transform: scaleX(1);
 }
 
 .home{
     display: flex;
     flex-direction: column;
-    margin-top: -8rem;
+    margin-top: -5rem;
     align-items: center;
     justify-content: center;
+    padding-top: 5rem;
 }    
 .home-content{    
     display: flex;
@@ -205,7 +204,6 @@ ul li{
     display: flex;
     justify-content: center;
 }
- 
 .home-img img{
     max-width: 100%;
     height: auto;    
@@ -215,7 +213,11 @@ ul li{
     cursor: pointer;
     transition: 0.4s ease-in-out;   
 }
-
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 80px var(--main-color);
+}
 .home-text h1{
     font-size: 4rem;
     margin-top: 1.5rem;
@@ -224,24 +226,14 @@ ul li{
 .text-animation{
     width: 100%;
     height: 10rem;
-    max-width: 100%;
     font-size: 3rem;
     margin-bottom: 5rem;      
-}
-    
+}    
 .home-text p{
     font-size: 2rem;
-    margin: 30px;
+    margin: 0 30px 25rem;
     font-weight: 600;
     line-height: 1.8;
-    max-width: 100%;
-    margin-bottom: 25rem;
-}
-
-.home-img img:hover{
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color),
-                0 0 100px var(--main-color);
 }
 
 .contact{
@@ -261,12 +253,11 @@ ul li{
     color: var(--titles-color);
     font-size: 5rem;
     margin-bottom: 3rem;
-    border-radius: 3rem;
+    border-radius: 1.5rem;
     animation: neon-glow 1.5s infinite alternate;
 }
 .contact li{
-    font-weight: 700;
-    
+    font-weight: 700;    
 }
 .contact a{
     font-weight: 700;
@@ -299,7 +290,6 @@ ul li{
 }
 .mainSkills, .secondarySkills{
     width: 100%;
-    height: auto;
     padding: 1rem;
 }
 .skills li{
@@ -345,8 +335,7 @@ ul li{
     font-size: 6rem;
     border-bottom: 0.4rem solid var(--hover-color);
     margin-bottom: 6rem;
-    text-align: center;
-    justify-content: center;
+    text-align: center;    
     width: 100%;   
 }
 .education, .courses{
@@ -395,17 +384,19 @@ ul li{
 }
 .course a{
     color: var(--main-color);
-    display: inline-block;
     padding: 0.8rem 1.5rem;
     border: 2px solid var(--main-color);
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 1rem;
 }
+.course a:hover{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
 .course p{
     margin-left: 3.5rem;
 }
-
 
 .experience {
     margin-top: 4rem;
@@ -551,6 +542,7 @@ ul li{
 .footer {
     background-color: #2f2f2f;
     padding: 20px 0;
+    display: flex;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -701,47 +693,47 @@ ul li{
         margin-top: 7rem;
         display:flex;
         justify-content: center;
-        padding-top: 7rem;
+        padding: 10rem 5rem 5rem 5rem;;
     }
     .experience-content{
         max-width: 100%;
         margin-top: -12rem;
     }
     .experience-content h2 {
-        color: #ff66cc;
+        color: var(--hover-color);
         font-size: 5rem;
         text-align: center;
         border-bottom: 0.5rem solid var(--titles-color);
         margin-bottom: 6rem;
         width: 100%;
     }
-    
     .job {
         margin-bottom: 2.5rem;
         padding: 2rem;
-        background-color: #23021f;
+        background-color: #20061d;
         border-radius: 10px;
         box-shadow: 0 0 30px rgb(220, 49, 250)
-    }
-    
+    }    
     .job h3 {
         font-size: 3.5rem;
-        color: #00ffee;
+        color: var(--titles-color);
         margin-bottom: 1rem;
-    }
-    
+    }    
     .job p {
         font-size: 2.5rem;
         font-weight: 500;
         color: #ccc;
         line-height: 1.6;
-    }
-    
+    }    
     .projects {
         margin-bottom: 10rem;
+        padding: 5rem;
+        background-color: var(--second-bg-color);
+        box-shadow: 0 0 150px blue;
     }
     .projects-content{
         grid-template-columns: repeat(2fr, 1fr);
+        gap: 3rem;
     }
     .project{
         align-items: center;
@@ -761,17 +753,16 @@ ul li{
         font-size: 2.5rem;
         text-align: center;
     }
-    /* Estilo del modal */
+    
     .modal {
-        display: none; /* Oculto inicialmente */
+        display: none; 
         position: fixed;
         z-index: 10;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
-        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.9); 
         align-items: center;
     }
 
@@ -788,20 +779,18 @@ ul li{
 
     .modal-content {
         width: 70rem;
-        transition: transform 0.3s ease; /* Suavidad en el zoom */
+        transition: transform 0.3s ease; 
     }
     .image-container:hover .modal-content {
-        transform: scale(1.8); /* Nivel de zoom al pasar el cursor */
+        transform: scale(1.8); 
     }
     .close {
         position: absolute;
-        top: 10rem;
         right: 42.5rem;
         font-size: 7rem;
         color: #fff;
         cursor: pointer;
     }
-
     .close:hover {
         color: #ccc;
     };
@@ -1096,32 +1085,32 @@ ul li{
     100% {
         box-shadow: 0 0 1rem 0 rgba(255, 20 , 147, 0.7);
     }
-};
+}
 
 
 /* Scrollbar para navegadores basados en WebKit (Chrome, Safari, Edge) */
 
 /* Estilos para la barra de desplazamiento */
 ::-webkit-scrollbar {
-    width: 5rem;  /* Grosor de la barra vertical */
-    height: 5rem; /* Grosor de la barra horizontal */
+    width: 5rem;  
+    height: 5rem; 
 }
   
 /* Estilos para el fondo de la barra de desplazamiento */
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;  /* Color de fondo de la pista */
-}
+    background-color: #f1f1f1;
+} 
   
   /* Estilos para la barra en sí (thumb) */
 ::-webkit-scrollbar-thumb {
-  background-color: #888;  /* Color de la barra */
-  border-radius: 10px;  /* Redondeado de la barra */
-  border: 3px solid #f1f1f1;  /* Borde para separar el thumbdel track */
+  background-color: #888;  
+  border-radius: 10px;  
+  border: 3px solid #f1f1f1;  
 }
   
   /* Estilo de la barra cuando se pasa el cursor encima */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;  /* Color de la barra al hacerhover */
+  background-color: #555;
 }
   
 

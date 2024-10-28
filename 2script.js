@@ -1,3 +1,4 @@
+// Animación chula ^^
 // Arrays de palabras para la animación
 const wordsEs = [
     "Desarrollador Frontend",
@@ -19,10 +20,11 @@ let isDeleting = false;
 // Velocidades de animación y retardo entre palabras
 const typingSpeed = 80; 
 const deletingSpeed = 50; 
-const delayBetweenWords = 1800; 
+const delayBetweenWords = 1500; 
 
-// Animación chula ^^
+let typingTimeout;
 function typeWords() {
+    clearTimeout(typingTimeout);
     const typingElement = document.querySelector('.home-text .text-animation span');
     const currentWord = words[wordIndex];
 
@@ -32,18 +34,18 @@ function typeWords() {
         if (charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(typeWords, delayBetweenWords);
+            typingTimeout = setTimeout(typeWords, delayBetweenWords);
         } else {
-            setTimeout(typeWords, deletingSpeed);
+            typingTimeout = setTimeout(typeWords, deletingSpeed);
         }
     } else {
         charIndex++;
         typingElement.textContent = currentWord.substring(0, charIndex);
         if (charIndex === currentWord.length) {
             isDeleting = true;
-            setTimeout(typeWords, delayBetweenWords);
+            typingTimeout = setTimeout(typeWords, delayBetweenWords);
         } else {
-            setTimeout(typeWords, typingSpeed);
+            typingTimeout = setTimeout(typeWords, typingSpeed);
         }
     }
 }
