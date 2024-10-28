@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleMenu() {
     const navBar = document.querySelector('.navBar');
     if (navBar) {
-        navBar.classList.toggle('active'); // Muestra/Oculta la clase 'active' de navBar
+        navBar.classList.toggle('active'); 
     }
 }
 
@@ -100,7 +100,7 @@ function toggleMenu() {
 function hideMenu() {
     const navBar = document.querySelector('.navBar');
     if (navBar) {
-        navBar.classList.remove('active'); // Oculta el menú
+        navBar.classList.remove('active'); 
     }
 }
 
@@ -124,44 +124,44 @@ document.addEventListener('click', function(event) {
     }
 });
 
-let zoomLevel = 1; // Nivel de zoom inicial
-let isDragging = false; // Estado de arrastre
-let startX, startY, initialX, initialY; // Posiciones de inicio y posición actual
+let zoomLevel = 1; 
+let isDragging = false; 
+let startX, startY, initialX, initialY; 
 
 // Abre el modal y establece la imagen
 function openModal(image) {
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
 
-    modal.style.display = "flex"; // Muestra el modal
-    modalImage.src = image.src; // Asigna la fuente de la imagen al modal
-    zoomLevel = 1; // Restablece el zoom al abrir el modal
-    modalImage.style.transform = "scale(1)"; // Restablece la escala de la imagen
-    modalImage.style.cursor = "grab"; // Cursor para el arrastre
-    modalImage.style.left = "0px"; // Restablece la posición horizontal
-    modalImage.style.top = "0px"; // Restablece la posición vertical
+    modal.style.display = "flex"; 
+    modalImage.src = image.src; 
+    zoomLevel = 1; 
+    modalImage.style.transform = "scale(1)"; 
+    modalImage.style.cursor = "grab"; 
+    modalImage.style.left = "0px"; 
+    modalImage.style.top = "0px"; 
 }
 
 // Cierra el modal
 function closeModal() {
     const modal = document.getElementById("imageModal");
-    modal.style.display = "none"; // Oculta el modal
+    modal.style.display = "none"; 
 }
 
 // Control de zoom mediante la rueda del mouse
 document.getElementById("imageModal").addEventListener("wheel", function(event) {
-    event.preventDefault(); // Evita el scroll en la página
+    event.preventDefault(); 
 
     const modalImage = document.getElementById("modalImage");
 
     // Ajusta el nivel de zoom en función de la dirección de desplazamiento de la rueda
     if (event.deltaY < 0) {
-        zoomLevel = Math.min(zoomLevel + 0.1, 3); // Zoom máximo a 3x
+        zoomLevel = Math.min(zoomLevel + 0.1, 3); 
     } else {
-        zoomLevel = Math.max(zoomLevel - 0.1, 1); // Zoom mínimo a 1x
+        zoomLevel = Math.max(zoomLevel - 0.1, 1); 
     }
 
-    modalImage.style.transform = `scale(${zoomLevel})`; // Aplica el nivel de zoom
+    modalImage.style.transform = `scale(${zoomLevel})`; 
 
     // Cambia el cursor en función del nivel de zoom
     modalImage.style.cursor = zoomLevel > 1 ? "grab" : "default";
@@ -172,9 +172,9 @@ const modalImage = document.getElementById("modalImage");
 
 // Al comenzar el arrastre
 modalImage.addEventListener("mousedown", function(event) {
-    if (zoomLevel > 1) { // Solo permite arrastrar si hay zoom aplicado
+    if (zoomLevel > 1) { 
         isDragging = true;
-        modalImage.style.cursor = "grabbing"; // Cambia el cursor
+        modalImage.style.cursor = "grabbing"; 
         startX = event.clientX;
         startY = event.clientY;
         initialX = parseInt(modalImage.style.left) || 0;
@@ -187,8 +187,8 @@ document.addEventListener("mousemove", function(event) {
     if (isDragging) {
         const dx = event.clientX - startX;
         const dy = event.clientY - startY;
-        modalImage.style.left = `${initialX + dx}px`; // Actualiza posición horizontal
-        modalImage.style.top = `${initialY + dy}px`;  // Actualiza posición vertical
+        modalImage.style.left = `${initialX + dx}px`;
+        modalImage.style.top = `${initialY + dy}px`;  
     }
 });
 
@@ -196,6 +196,6 @@ document.addEventListener("mousemove", function(event) {
 document.addEventListener("mouseup", function() {
     if (isDragging) {
         isDragging = false;
-        modalImage.style.cursor = "grab"; // Restablece el cursor
+        modalImage.style.cursor = "grab";
     }
 });
