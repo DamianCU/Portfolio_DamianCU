@@ -209,14 +209,14 @@ ul li{
     height: auto;    
     border-radius: 50%;
     top: 3rem;
-    box-shadow: 0 0 50px var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;   
 }
 .home-img img:hover{
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color),
-                0 0 80px var(--main-color);
+    box-shadow: 0 0 5px var(--main-color),
+                0 0 15px var(--main-color),
+                0 0 30px var(--main-color);
 }
 .home-text h1{
     font-size: 4rem;
@@ -246,7 +246,7 @@ ul li{
     line-height: 5rem;
     border: 3px dashed rgb(32, 32, 32);
     border-radius: 1rem;
-    box-shadow: 0 0 5rem var(--main-color);
+    box-shadow: 0 0 2rem var(--main-color);
     margin: 1rem auto;
 }
 .contact h2{
@@ -342,7 +342,7 @@ ul li{
     background-color: #010123;
     padding: 2rem;    
     border-radius: 4rem;
-    box-shadow: 0 0 3.5rem var(--main-color);
+    box-shadow: 0 0 1.7rem var(--main-color);
     margin-bottom: 6rem;
 }
 .bootcamp, .course{
@@ -422,7 +422,7 @@ ul li{
     padding: 2rem;
     background-color: #1d0202;
     border-radius: 10px;
-    box-shadow: 0 0 80px rgb(196, 8, 229)
+    box-shadow: 0 0 1.5rem rgb(196, 8, 229)
 }
 
 .job h3 {
@@ -443,7 +443,7 @@ ul li{
     margin-top: 30rem;
     padding: 5rem;
     background-color: #151514;
-    box-shadow: 0 0 150px rgba(34, 34, 250, 0.979);
+    box-shadow: 0 0 1.5rem rgba(34, 34, 250, 0.979);
 }
 .projects-content{
     display: grid;
@@ -537,7 +537,7 @@ ul li{
     margin-top: 10rem;
     padding: 5rem;
     background-color: #151514;
-    box-shadow: 0 0 150px rgba(34, 34, 250, 0.979);
+    box-shadow: 0 0 1.7rem rgba(34, 34, 250, 0.979);
 }
 .aboutMe h2{
     color: var(--hover-color);
@@ -738,7 +738,7 @@ ul li{
         padding: 2rem;
         background-color: #20061d;
         border-radius: 10px;
-        box-shadow: 0 0 30px rgb(220, 49, 250)
+        box-shadow: 0 0 1.5rem rgb(220, 49, 250)
     }    
     .job h3 {
         font-size: 3.5rem;
@@ -755,7 +755,7 @@ ul li{
         margin-bottom: 10rem;
         padding: 5rem;
         background-color: var(--second-bg-color);
-        box-shadow: 0 0 150px blue;
+        box-shadow: 0 0 1.7rem blue;
     }
     .projects-content{
         grid-template-columns: repeat(2fr, 1fr);
@@ -915,20 +915,20 @@ ul li{
         background-color: var(--main-color);
         color: var(--titles-color);
     }
-        /* Animación para el pseudo-elemento ::after */
+        
     .navBar a::after {
-        content: ""; /* Asegura que se muestre el pseudo-elemento */
+        content: ""; 
         display: block;
         height: 1px;
-        background-color: red; /* Color de la línea */
+        background-color: red; 
         position: absolute;
         bottom: 0;
         left: 0;
-        transition: width 0.5s ease; /* Transición de la línea */
+        transition: width 0.5s ease; 
     }
     
     .navBar a:hover::after {
-        width: 100%; /* Extiende la línea al ancho completo */
+        width: 100%; 
     }   
     .home{
         display: flex;
@@ -962,7 +962,7 @@ ul li{
         width: 40rem;   
         border-radius: 50%;
         top: 3rem;
-        box-shadow: 0 0 50px var(--main-color);
+        box-shadow: 0 0 1.7rem var(--main-color);
         cursor: pointer;
         transition: 0.4s ease-in-out;   
     }
@@ -1079,7 +1079,7 @@ ul li{
     }
     76%,
     100%{
-        content: "Video Games Developer in Progress";
+        content: "Video Games Developer";
     }
 }
 
