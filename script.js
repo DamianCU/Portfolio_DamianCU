@@ -2,15 +2,15 @@
 // Arrays de palabras para la animación
 const wordsEs = [
     "Desarrollador Frontend",
-    "Desarrollador Backend en progreso",
+    "Desarrollador Backend",
     "Artista 3D",
-    "Desarrollador de Videojuegos en Progreso"
+    "Desarrollador de Videojuegos"
 ];
 const wordsEn = [
     "Frontend Developer",
-    "Backend Developer in progress",
+    "Backend Developer",
     "3D Artist",
-    "Video Games Developer in Progress"
+    "Video Games Developer"
 ];
 let words = wordsEs; // Español por defecto
 let wordIndex = 0;

@@ -923,7 +923,7 @@ ul li{
         max-width: 60%;
         text-align: left;
         margin-top: -7rem;
-        margin-left: -15rem;
+        margin-left: -10rem;
         padding-left: 2rem;
     }    
     .home-text h1{
@@ -931,8 +931,8 @@ ul li{
         line-height: 1.2;        
     }
     .text-animation{
-        width: 700px;
-        height: 100px;
+        width: 10rem;
+        height: 10rem;
         font-size: 3.5rem;
         margin: 0.5rem 0 1.5rem;   
     }
