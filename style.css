@@ -904,7 +904,7 @@ ul li{
     }
     .home-img{
         display: flex;
-        margin-top: -35rem;
+        margin-top: -20rem;
         margin-left: -15rem;
         justify-content: center;
         flex: 1;    
@@ -955,6 +955,10 @@ ul li{
         background-color: var(--bg-color);
         border-left: 3px solid var(--bg-color);
         animation: cursor 0.2s infinite;
+    }
+    .home-text p{
+        font-size: 1.5rem;
+    
     }
     #contact1{
         width: 100%;
